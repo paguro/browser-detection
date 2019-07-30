@@ -1,0 +1,11 @@
+module.exports = {
+  env: {
+    browser: true
+  },
+  plugins: ['es5'],
+  extends: ['eslint:recommended', 'plugin:es5/no-es2015'],
+  rules: {
+    'es5/no-modules': 'off',
+    'no-console': 'off',
+  },
+};
