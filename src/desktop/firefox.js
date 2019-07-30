@@ -9,7 +9,6 @@ export function detectFirefox() {
   var version;
 
   // Allowed Engines:
-  // - GECKO
   if ([ENGINE_GECKO].indexOf(engine) === -1) {
     return;
   }

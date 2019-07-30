@@ -9,7 +9,6 @@ export function detectSafari() {
   var version;
 
   // Allowed Engines:
-  // - WEKBKIT
   if ([ENGINE_WEBKIT].indexOf(engine) === -1) {
     return;
   }

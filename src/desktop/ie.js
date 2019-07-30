@@ -9,7 +9,6 @@ export function detectInternetExplorer() {
   var version;
 
   // Allowed Engines:
-  // - TRIDENT
   if ([ENGINE_TRIDENT].indexOf(engine) === -1) {
     return;
   }
