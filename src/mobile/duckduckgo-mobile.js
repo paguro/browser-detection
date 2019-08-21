@@ -17,7 +17,7 @@ export function detectDuckDuckGoMobile() {
     return;
   }
 
-  // TODO: add features for version detection
+  // TODO: Add DuckDuckGo version detection
   version = 'unknown';
 
   if (version) {

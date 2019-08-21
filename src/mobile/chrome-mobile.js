@@ -13,15 +13,15 @@ export function detectChromeMobile() {
     return;
   }
 
-  // TODO: verify if Chrome iOS has the `window.webkit` property while Safari iOS not
-  //  Tested on:
-  //  - Chrome 75.0.3770.70 (iOS)
-  //  - Safari 12.2 (iOS)
-  if (!hasFeature('window.webkit')) {
+  // Note: window.chrome is not set on mobile (tested on iOS)
+  if(hasFeature('window.chrome')){
     return;
   }
 
-  // Note: window.chrome is not set on mobile (tested on iOS)
+  // Note: Chrome iOS has the `window.webkit` property while Safari iOS not
+  if (!hasFeature('window.webkit')) {
+    return;
+  }
 
   if (hasFeature('TextEncoder.encodeInto')) {
     version = 74;
