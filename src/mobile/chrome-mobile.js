@@ -14,7 +14,7 @@ export function detectChromeMobile() {
   }
 
   // Note: window.chrome is not set on mobile (tested on iOS)
-  if(hasFeature('window.chrome')){
+  if (hasFeature('window.chrome')) {
     return;
   }
 

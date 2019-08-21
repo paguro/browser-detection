@@ -14,9 +14,9 @@ export function hasFeature(feature) {
     var property = featurePath[1];
 
     return (
-        inWindow(object) &&
-        (property in window[object] ||
-            ('prototype' in window[object] && property in window[object].prototype))
+      inWindow(object) &&
+      (property in window[object] ||
+        ('prototype' in window[object] && property in window[object].prototype))
     );
   }
 
