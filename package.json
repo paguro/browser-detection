@@ -4,7 +4,7 @@
   "author": "Paguro Team",
   "license": "MIT",
   "description": "A library for detecting browser and platform via feature testing.",
-  "main": "dist/browser-detection.js",
+  "main": "./browser-detection.js",
   "scripts": {
     "clean": "rm -f dist/browser-detection*.js",
     "build": "rollup -c",
