@@ -6,9 +6,11 @@
   "description": "A library for detecting browser and platform via feature testing.",
   "main": "dist/browser-detection.js",
   "scripts": {
+    "clean": "rm -f dist/browser-detection*.js",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "prettify": "prettier --single-quote --write './*.js' 'src/**/*.js' 'test/**/*.js'"
+    "prettify": "prettier --single-quote --write './*.js' 'src/**/*.js' 'test/**/*.js'",
+    "release": "yarn clean && yarn build && ./scripts/publish.sh"
   },
   "husky": {
     "hooks": {
