@@ -3,10 +3,10 @@ import { ENGINE_EDGE, detectEngine } from '../engine';
 import { hasFeature } from '../feature';
 
 export function detectEdge() {
-  var name = 'Microsoft Edge';
+  var browser = 'Microsoft Edge';
+  var browserVersion;
   var engine = detectEngine();
   var os = detectOS();
-  var version;
 
   // Allowed Engines:
   if ([ENGINE_EDGE].indexOf(engine) === -1) {
@@ -14,22 +14,29 @@ export function detectEdge() {
   }
 
   if (hasFeature('AuthenticatorAssertionResponse')) {
-    version = 18;
+    browserVersion = 18;
   } else if (hasFeature('Client')) {
-    version = 17;
+    browserVersion = 17;
   } else if (hasFeature('AbortController')) {
-    version = 16;
+    browserVersion = 16;
   } else if (hasFeature('CanvasRenderingContext2D.imageSmoothingEnabled')) {
-    version = 15;
+    browserVersion = 15;
   } else if (hasFeature('AudioContext.close')) {
-    version = 14;
+    browserVersion = 14;
   } else if (hasFeature('AudioBuffer.copyFromChannel')) {
-    version = 13;
+    browserVersion = 13;
   } else if (hasFeature('ANGLE_instanced_arrays.drawArraysInstancedANGLE')) {
-    version = 12;
+    browserVersion = 12;
   }
 
-  if (version) {
-    return { name: name, engine: engine, version: version, os: os };
+  if (browserVersion) {
+    return {
+      browser: browser,
+      browserVersion: browserVersion,
+      engine: engine,
+      engineVersion: undefined,
+      os: os,
+      osVersion: undefined
+    };
   }
 }

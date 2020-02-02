@@ -3,10 +3,10 @@ import { ENGINE_BLINK, ENGINE_WEBKIT, detectEngine } from '../engine';
 import { hasFeature } from '../feature';
 
 export function detectChromeMobile() {
-  var name = 'Chrome Mobile';
+  var browser = 'Chrome Mobile';
+  var browserVersion;
   var engine = detectEngine();
   var os = detectOS();
-  var version;
 
   // Allowed Engines:
   if ([ENGINE_BLINK, ENGINE_WEBKIT].indexOf(engine) === -1) {
@@ -24,104 +24,111 @@ export function detectChromeMobile() {
   }
 
   if (hasFeature('TextEncoder.encodeInto')) {
-    version = 74;
+    browserVersion = 74;
   } else if (hasFeature('Document.adoptedStyleSheets')) {
-    version = 73;
+    browserVersion = 73;
   } else if (hasFeature('RTCPeerConnection.connectionState')) {
-    version = 72;
+    browserVersion = 72;
   } else if (hasFeature('HTMLElement.oncopy')) {
-    version = 71;
+    browserVersion = 71;
   } else if (hasFeature('RTCPeerConnection.currentLocalDescription')) {
-    version = 70;
+    browserVersion = 70;
   } else if (hasFeature('Element.toggleAttribute')) {
-    version = 69;
+    browserVersion = 69;
   } else if (hasFeature('CanvasPattern.setTransform')) {
-    version = 68;
+    browserVersion = 68;
   } else if (hasFeature('RTCRtpReceiver.getStats')) {
-    version = 67;
+    browserVersion = 67;
   } else if (hasFeature('AbortController')) {
-    version = 66;
+    browserVersion = 66;
   } else if (hasFeature('HTMLAnchorElement.relList')) {
-    version = 65;
+    browserVersion = 65;
   } else if (hasFeature('Document.alinkColor')) {
-    version = 64;
+    browserVersion = 64;
   } else if (hasFeature('MediaStreamTrack.applyConstraints')) {
-    version = 63;
+    browserVersion = 63;
   } else if (hasFeature('HTMLDataElement')) {
-    version = 62;
+    browserVersion = 62;
   } else if (hasFeature('CSS.supports')) {
-    version = 61;
+    browserVersion = 61;
   } else if (hasFeature('DataTransfer')) {
-    version = 60;
+    browserVersion = 60;
   } else if (hasFeature('ByteLengthQueuingStrategy')) {
-    version = 59;
+    browserVersion = 59;
   } else if (hasFeature('ClipboardEvent')) {
-    version = 58;
+    browserVersion = 58;
   } else if (hasFeature('AudioProcessingEvent')) {
-    version = 57;
+    browserVersion = 57;
   } else if (hasFeature('DOMMatrixReadOnly.rotate')) {
-    version = 56;
+    browserVersion = 56;
   } else if (hasFeature('AnalyserNode')) {
-    version = 55;
+    browserVersion = 55;
   } else if (hasFeature('CanvasRenderingContext2D.imageSmoothingQuality')) {
-    version = 54;
+    browserVersion = 54;
   } else if (hasFeature('Element.attachShadow')) {
-    version = 53;
+    browserVersion = 53;
   } else if (hasFeature('AudioParam.maxValue')) {
-    version = 52;
+    browserVersion = 52;
   } else if (hasFeature('CanvasCaptureMediaStreamTrack')) {
-    version = 51;
+    browserVersion = 51;
   } else if (hasFeature('DOMTokenList.value')) {
-    version = 50;
+    browserVersion = 50;
   } else if (hasFeature('DOMTokenList.supports')) {
-    version = 49;
+    browserVersion = 49;
   } else if (hasFeature('FontFaceSet.add')) {
-    version = 48;
+    browserVersion = 48;
   } else if (hasFeature('CSSNamespaceRule')) {
-    version = 47;
+    browserVersion = 47;
   } else if (hasFeature('CSS.escape')) {
-    version = 46;
+    browserVersion = 46;
   } else if (hasFeature('CSSKeyframeRule')) {
-    version = 45;
+    browserVersion = 45;
   } else if (hasFeature('Document.scrollingElement')) {
-    version = 44;
+    browserVersion = 44;
   } else if (hasFeature('AnimationEvent')) {
-    version = 43;
+    browserVersion = 43;
   } else if (hasFeature('Element.id')) {
-    version = 42;
+    browserVersion = 42;
   } else if (hasFeature('Document.origin')) {
-    version = 41;
+    browserVersion = 41;
   } else if (hasFeature('HTMLButtonElement.reportValidity')) {
-    version = 40;
+    browserVersion = 40;
   } else if (hasFeature('HTMLPictureElement')) {
-    version = 38;
+    browserVersion = 38;
   } else if (hasFeature('Crypto.subtle')) {
-    version = 37;
+    browserVersion = 37;
   } else if (hasFeature('FontFace')) {
-    version = 35;
+    browserVersion = 35;
   } else if (hasFeature('Element.matches')) {
-    version = 34;
+    browserVersion = 34;
   } else if (hasFeature('Document.hidden')) {
-    version = 33;
+    browserVersion = 33;
   } else if (hasFeature('URL')) {
-    version = 32;
+    browserVersion = 32;
   } else if (hasFeature('Element.localName')) {
-    version = 31;
+    browserVersion = 31;
   } else if (hasFeature('Document.currentScript')) {
-    version = 29;
+    browserVersion = 29;
   } else if (hasFeature('CSS')) {
-    version = 28;
+    browserVersion = 28;
   } else if (hasFeature('TransitionEvent')) {
-    version = 27;
+    browserVersion = 27;
   } else if (hasFeature('HTMLTemplateElement')) {
-    version = 26;
+    browserVersion = 26;
   } else if (hasFeature('Document.createTouch')) {
-    version = 25;
+    browserVersion = 25;
   } else if (hasFeature('AnalyserNode')) {
-    version = 18;
+    browserVersion = 18;
   }
 
-  if (version) {
-    return { name: name, engine: engine, version: version, os: os };
+  if (browserVersion) {
+    return {
+      browser: browser,
+      browserVersion: browserVersion,
+      engine: engine,
+      engineVersion: undefined,
+      os: os,
+      osVersion: undefined
+    };
   }
 }

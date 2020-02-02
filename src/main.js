@@ -11,11 +11,7 @@ import { detectChromeMobile } from './mobile/chrome-mobile';
 import { detectDuckDuckGoMobile } from './mobile/duckduckgo-mobile';
 
 function isMobile() {
-  return (
-    hasFeature('orientation') ||
-    // Mobile do not have plugins
-    (hasFeature('navigator.plugins') && navigator.plugins.length === 0)
-  );
+  return hasFeature('orientation');
 }
 
 export default function BrowserDetection() {

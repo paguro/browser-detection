@@ -1,12 +1,12 @@
 import { detectChrome } from '../desktop/chrome';
 
 export function detectBrave() {
-  var name = 'Brave';
+  var browser = 'Brave';
   var features = detectChrome();
 
   // Has Chrome's features
   if (features && hasBraveProps()) {
-    features.name = name;
+    features.browser = browser;
     return features;
   }
 }

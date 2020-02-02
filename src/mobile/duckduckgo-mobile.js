@@ -3,10 +3,10 @@ import { ENGINE_WEBKIT, detectEngine } from '../engine';
 import { hasFeature } from '../feature';
 
 export function detectDuckDuckGoMobile() {
-  var name = 'Duck Duck Go';
+  var browser = 'Duck Duck Go';
+  var browserVersion;
   var engine = detectEngine();
   var os = detectOS();
-  var version;
 
   // Allowed Engines:
   if ([ENGINE_WEBKIT].indexOf(engine) === -1) {
@@ -17,10 +17,14 @@ export function detectDuckDuckGoMobile() {
     return;
   }
 
-  // TODO: Add DuckDuckGo version detection
-  version = 'unknown';
-
-  if (version) {
-    return { name: name, engine: engine, version: version, os: os };
+  if (browserVersion) {
+    return {
+      browser: browser,
+      browserVersion: browserVersion,
+      engine: engine,
+      engineVersion: undefined,
+      os: os,
+      osVersion: undefined
+    };
   }
 }
