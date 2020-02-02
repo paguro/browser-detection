@@ -1,3 +1,5 @@
+import { uglify } from 'rollup-plugin-uglify';
+
 export default [
   {
     input: 'src/main.js',
@@ -5,7 +7,8 @@ export default [
       format: 'umd',
       name: 'browser-detection',
       file: './dist/browser-detection.js'
-    }
+    },
+    plugins: [uglify()]
   },
   {
     input: 'src/main.js',
@@ -13,6 +16,7 @@ export default [
       format: 'iife',
       name: 'BrowserDetection',
       file: './dist/browser-detection.iife.js'
-    }
+    },
+    plugins: [uglify()]
   }
 ];
