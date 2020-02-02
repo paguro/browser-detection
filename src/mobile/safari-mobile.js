@@ -3,10 +3,10 @@ import { ENGINE_WEBKIT, detectEngine } from '../engine';
 import { hasFeature } from '../feature';
 
 export function detectSafariMobile() {
-  var name = 'Safari Mobile';
+  var browser = 'Safari Mobile';
+  var browserVersion;
   var engine = detectEngine();
   var os = detectOS();
-  var version;
 
   // Allowed Engines:
   if ([ENGINE_WEBKIT].indexOf(engine) === -1) {
@@ -27,65 +27,72 @@ export function detectSafariMobile() {
 
   if (iOSversion()) {
     if (hasFeature('IntersectionObserver')) {
-      version = 12.2;
+      browserVersion = 12.2;
     } else if (hasFeature('ShadowRoot.fullscreenElement')) {
-      version = 12;
+      browserVersion = 12;
     } else if (hasFeature('DOMMatrixReadOnly')) {
-      version = 11.3;
+      browserVersion = 11.3;
     } else if (hasFeature('AbortController')) {
-      version = 11.1;
+      browserVersion = 11.1;
     } else if (hasFeature('CanvasPattern.setTransform')) {
-      version = 11;
+      browserVersion = 11;
     } else if (hasFeature('KeyboardEvent.getModifierState')) {
-      version = 10.3;
+      browserVersion = 10.3;
     } else if (hasFeature('Document.fonts')) {
-      version = 10.2;
+      browserVersion = 10.2;
     } else if (hasFeature('Crypto.subtle')) {
-      version = 10.1;
+      browserVersion = 10.1;
     } else if (hasFeature('Element.attachShadow')) {
-      version = 10;
+      browserVersion = 10;
     } else if (hasFeature('HTMLPictureElement')) {
-      version = 9.3;
+      browserVersion = 9.3;
     } else if (hasFeature('PerformanceTiming')) {
-      version = 9.2;
+      browserVersion = 9.2;
     } else if (hasFeature('Document.scrollingElement')) {
-      version = 9;
+      browserVersion = 9;
     } else if (hasFeature('WebGLActiveInfo')) {
-      version = 8.1;
+      browserVersion = 8.1;
     } else if (hasFeature('Document.currentScript')) {
-      version = 8;
+      browserVersion = 8;
     } else if (hasFeature('AudioTrackList')) {
-      version = 7.1;
+      browserVersion = 7.1;
     } else if (hasFeature('Document.hidden')) {
-      version = 7;
+      browserVersion = 7;
     } else if (hasFeature('Crypto')) {
-      version = 6.1;
+      browserVersion = 6.1;
     } else if (hasFeature('Event')) {
-      version = 6;
+      browserVersion = 6;
     } else if (hasFeature('KeyboardEvent.charCode')) {
-      version = 5.1;
+      browserVersion = 5.1;
     } else if (hasFeature('Document.body')) {
-      version = 5;
+      browserVersion = 5;
     } else if (hasFeature('History.pushState')) {
-      version = 4.3;
+      browserVersion = 4.3;
     } else if (hasFeature('DeviceMotionEvent')) {
-      version = 4.2;
+      browserVersion = 4.2;
     } else if (hasFeature('Element.getBoundingClientRect')) {
-      version = 4;
+      browserVersion = 4;
     } else if (hasFeature('CanvasGradient')) {
-      version = 3.2;
+      browserVersion = 3.2;
     } else if (hasFeature('SVGCircleElement')) {
-      version = 3.1;
+      browserVersion = 3.1;
     } else if (hasFeature('Document.createTreeWalker')) {
-      version = 3;
+      browserVersion = 3;
     } else if (hasFeature('GestureEvent')) {
-      version = 2;
+      browserVersion = 2;
     } else if (hasFeature('Document.getElementById')) {
-      version = 1;
+      browserVersion = 1;
     }
 
-    if (version) {
-      return { name: name, engine: engine, version: version, os: os };
+    if (browserVersion) {
+      return {
+        browser: browser,
+        browserVersion: browserVersion,
+        engine: engine,
+        engineVersion: undefined,
+        os: os,
+        osVersion: undefined
+      };
     }
   }
 }

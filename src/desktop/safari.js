@@ -3,10 +3,10 @@ import { ENGINE_WEBKIT, detectEngine } from '../engine';
 import { hasFeature } from '../feature';
 
 export function detectSafari() {
-  var name = 'Safari';
+  var browser = 'Safari';
+  var browserVersion;
   var engine = detectEngine();
   var os = detectOS();
-  var version;
 
   // Allowed Engines:
   if ([ENGINE_WEBKIT].indexOf(engine) === -1) {
@@ -15,52 +15,59 @@ export function detectSafari() {
 
   // Version detection
   if (hasFeature('IntersectionObserver')) {
-    version = 12.1;
+    browserVersion = 12.1;
   } else if (hasFeature('Element.toggleAttribute')) {
-    version = 12;
+    browserVersion = 12;
   } else if (hasFeature('AbortController')) {
-    version = 11.1;
+    browserVersion = 11.1;
   } else if (hasFeature('CSSStyleDeclaration.cssFloat')) {
-    version = 11;
+    browserVersion = 11;
   } else if (hasFeature('EventTarget')) {
-    version = 10.1;
+    browserVersion = 10.1;
   } else if (hasFeature('CSS')) {
-    version = 10;
+    browserVersion = 10;
   } else if (hasFeature('AnimationEvent')) {
-    version = 9.1;
+    browserVersion = 9.1;
   } else if (hasFeature('AnimationEvent.animationName')) {
-    version = 9;
+    browserVersion = 9;
   } else if (hasFeature('Blob')) {
-    version = 8;
+    browserVersion = 8;
   } else if (hasFeature('Document.createComment')) {
-    version = 7;
+    browserVersion = 7;
   } else if (hasFeature('AudioTrackList')) {
-    version = 6.1;
+    browserVersion = 6.1;
   } else if (hasFeature('AnalyserNode')) {
-    version = 6;
+    browserVersion = 6;
   } else if (hasFeature('Blob')) {
-    version = 5.1;
+    browserVersion = 5.1;
   } else if (hasFeature('Document.evaluate')) {
-    version = 5;
+    browserVersion = 5;
   } else if (hasFeature('CSSKeyframeRule')) {
-    version = 4;
+    browserVersion = 4;
   } else if (hasFeature('DOMParser')) {
-    version = 3.2;
+    browserVersion = 3.2;
   } else if (hasFeature('CanvasGradient')) {
-    version = 3.1;
+    browserVersion = 3.1;
   } else if (hasFeature('Document.createNodeIterator')) {
-    version = 3;
+    browserVersion = 3;
   } else if (hasFeature('CanvasRenderingContext2D')) {
-    version = 2;
+    browserVersion = 2;
   } else if (hasFeature('Document.onselectionchange')) {
-    version = 1.3;
+    browserVersion = 1.3;
   } else if (hasFeature('HTMLMarqueeElement')) {
-    version = 1.2;
+    browserVersion = 1.2;
   } else if (hasFeature('Document.getElementById')) {
-    version = 1;
+    browserVersion = 1;
   }
 
-  if (version) {
-    return { name: name, engine: engine, version: version, os: os };
+  if (browserVersion) {
+    return {
+      browser: browser,
+      browserVersion: browserVersion,
+      engine: engine,
+      engineVersion: undefined,
+      os: os,
+      osVersion: undefined
+    };
   }
 }
