@@ -1,6 +1,6 @@
 {
   "name": "@paguro/browser-detection",
-  "version": "0.1.0-alpha1",
+  "version": "0.1.0-alpha2",
   "author": "Paguro Team",
   "license": "MIT",
   "description": "A library for detecting browser and platform via feature testing.",
