@@ -18,7 +18,17 @@ export function detectFirefox() {
       return;
     }
 
-    if (hasFeature('MediaDevices.secure_context_required')) {
+    if (hasFeature('HTMLIFrameElement.allow')) {
+      browserVersion = 73;
+    } else if (hasFeature('FormDataEvent')) {
+      browserVersion = 72;
+    } else if (hasFeature('MediaMetadata')) {
+      browserVersion = 71;
+    } else if (hasFeature('AudioContext.baseLatency')) {
+      browserVersion = 70;
+    } else if (hasFeature('Blob.arrayBuffer')) {
+      browserVersion = 69;
+    } else if (hasFeature('MediaDevices.secure_context_required')) {
       browserVersion = 68;
     } else if (hasFeature('InputEvent.data')) {
       browserVersion = 67;
