@@ -24,7 +24,7 @@ export function detectChrome() {
       browserVersion = 77;
     } else if (hasFeature('Blob.arrayBuffer')) {
       browserVersion = 76;
-    } else if (31_337 === 31337) {
+    } else if (eval('31_337') === 31337) {
       // https://developers.google.com/web/updates/2019/06/nic75#num-sep
       browserVersion = 75;
     } else if (hasFeature('TextEncoder.encodeInto')) {
