@@ -35,7 +35,11 @@ export function detectOpera() {
     appVersion.match(/Opera|OPR\//) ||
     (window.opera && appVersion.match(/Opera.*Presto.*Version\/([\d+.]+)/))
   ) {
-    if (hasFeature('ShadowRoot.adoptedStyleSheets')) {
+    if (hasFeature('IDBTransaction.commit')) {
+      browserVersion = 63;
+    } else if (hasFeature('Document.featurePolicy')) {
+      browserVersion = 62;
+    } else if (hasFeature('ShadowRoot.adoptedStyleSheets')) {
       browserVersion = 60;
     } else if (hasFeature('Element.requestFullscreen')) {
       browserVersion = 58;
