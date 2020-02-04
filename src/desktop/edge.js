@@ -1,15 +1,15 @@
 import { detectOS } from '../os';
-import { ENGINE_EDGE, detectEngine } from '../engine';
+import { LAYOUT_EDGE, detectLayout } from '../layout';
 import { hasFeature } from '../feature';
 
 export function detectEdge() {
   var browser = 'Microsoft Edge';
   var browserVersion;
-  var engine = detectEngine();
+  var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed Engines:
-  if ([ENGINE_EDGE].indexOf(engine) === -1) {
+  // Allowed Layouts:
+  if ([LAYOUT_EDGE].indexOf(layout) === -1) {
     return;
   }
 
@@ -33,8 +33,8 @@ export function detectEdge() {
     return {
       browser: browser,
       browserVersion: browserVersion,
-      engine: engine,
-      engineVersion: undefined,
+      layout: layout,
+      layoutVersion: undefined,
       os: os,
       osVersion: undefined
     };
