@@ -14,7 +14,9 @@ export function detectSafari() {
   }
 
   // Version detection
-  if (hasFeature('IntersectionObserver')) {
+  if (hasFeature('PointerEvent')) {
+    browserVersion = 13;
+  } else if (hasFeature('IntersectionObserver')) {
     browserVersion = 12.1;
   } else if (hasFeature('Element.toggleAttribute')) {
     browserVersion = 12;

@@ -16,7 +16,20 @@ export function detectChrome() {
   }
 
   if (window.chrome && !appVersion.match(/Opera|OPR\//)) {
-    if (hasFeature('TextEncoder.encodeInto')) {
+    if (hasFeature('HTMLVideoElement.getVideoPlaybackQuality')) {
+      browserVersion = 80;
+    } else if (hasFeature('GeolocationCoordinates')) {
+      browserVersion = 79;
+    } else if (hasFeature('CSS.registerProperty')) {
+      browserVersion = 78;
+    } else if (hasFeature('FormDataEvent')) {
+      browserVersion = 77;
+    } else if (hasFeature('Blob.arrayBuffer')) {
+      browserVersion = 76;
+    } else if (eval('31_337') === 31337) {
+      // https://developers.google.com/web/updates/2019/06/nic75#num-sep
+      browserVersion = 75;
+    } else if (hasFeature('TextEncoder.encodeInto')) {
       browserVersion = 74;
     } else if (hasFeature('MediaSession')) {
       browserVersion = 73;
