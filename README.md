@@ -17,7 +17,7 @@ $ yarn add @paguro/browser-detection
 ```js
 import BrowserDetection from '@paguro/browser-detection'; // ES6
 
-const detectedBrowser = BrowserDetection
+const detectedBrowser = BrowserDetection();
 console.log(detectedBrowser);
 
 /* -- Output
