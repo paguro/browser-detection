@@ -6,7 +6,7 @@ JavaScript library for detecting browsers and platforms using feature testing.
 
 ## Getting started
 
-To add the _Browser Detection_ library to your project:
+To add _Paguro's Browser Detection_ library to your project:
 
 ```
 $ yarn add @paguro/browser-detection
@@ -57,4 +57,4 @@ who participated in this project.
 
 ## License
 
-Browser Detection is [MIT licensed](LICENSE).
+_Paguro's Browser Detection_ is [MIT licensed](LICENSE).
