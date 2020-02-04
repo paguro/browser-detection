@@ -37,15 +37,15 @@ console.log(detectedBrowser);
 | Browser              | Versions |
 |----------------------|---------:|
 | Internet Explorer    |    11    |
-| Microsoft Edge       |     ?    |
-| Google Chrome        |   1-74   |
-| Mozilla Firefox      |   1-68   |
-| Apple Safari         |  1-12.1  |
-| Opera                |   2-60   |
+| Microsoft Edge       |    44    |
+| Google Chrome        |   1-80   |
+| Mozilla Firefox      |   1-73   |
+| Apple Safari         |   1-13   |
+| Opera                |   2-63   |
 | Brave                |     ?    |
-| Google Chrome Mobile |   18-74  |
-| Apple Safari Mobile  |  1-12.2  |
-| DuckDuckGo Mobile    |     ?    |
+| Google Chrome Mobile |   18-80  |
+| Apple Safari Mobile  |    1-13  |
+| DuckDuckGo Mobile    |   7.34   |
 
 ## Authors
 
