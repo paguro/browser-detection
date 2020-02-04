@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/%40paguro%2Fbrowser-detection.svg)](https://badge.fury.io/js/%40paguro%2Fbrowser-detection)
 
-JavaScript library for detecting browser and platform via feature testing.
+JavaScript library for detecting browsers and platforms using feature testing.
 
 ## Getting started
 
