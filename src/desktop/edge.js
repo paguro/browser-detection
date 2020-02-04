@@ -15,7 +15,7 @@ export function detectEdge() {
     return;
   }
 
-  if ([ENGINE_BLINK].indexOf(engine) !== -1) {
+  if ([LAYOUT_BLINK].indexOf(layout) !== -1) {
     // FIXME: We need to detect differences/quicks otherwise we have false positives
 
     //if (hasFeature('RTCIceCandidate.address')) {
@@ -23,7 +23,7 @@ export function detectEdge() {
     //}
 
     return;
-  } else if ([ENGINE_EDGE].indexOf(engine) !== -1) {
+  } else if ([LAYOUT_EDGE].indexOf(layout) !== -1) {
     if (hasFeature('AuthenticatorAssertionResponse')) {
       browserVersion = 44; //18
     } else if (hasFeature('Client')) {
