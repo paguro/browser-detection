@@ -23,7 +23,19 @@ export function detectChromeMobile() {
     return;
   }
 
-  if (hasFeature('TextEncoder.encodeInto')) {
+  if (hasFeature('HTMLVideoElement.getVideoPlaybackQuality')) {
+    browserVersion = 80;
+  } else if (hasFeature('GeolocationCoordinates')) {
+    browserVersion = 79;
+  } else if (hasFeature('CSS.registerProperty')) {
+    browserVersion = 78;
+  } else if (hasFeature('FormDataEvent')) {
+    browserVersion = 77;
+  } else if (hasFeature('Blob.arrayBuffer')) {
+    browserVersion = 76;
+  } else if (hasFeature('Navigator.canShare')) {
+    browserVersion = 75;
+  } else if (hasFeature('TextEncoder.encodeInto')) {
     browserVersion = 74;
   } else if (hasFeature('Document.adoptedStyleSheets')) {
     browserVersion = 73;
