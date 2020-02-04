@@ -26,7 +26,9 @@ export function detectSafariMobile() {
   }
 
   if (iOSversion()) {
-    if (hasFeature('IntersectionObserver')) {
+    if (hasFeature('PointerEvent')) {
+      browserVersion = 13;
+    } else if (hasFeature('IntersectionObserver')) {
       browserVersion = 12.2;
     } else if (hasFeature('ShadowRoot.fullscreenElement')) {
       browserVersion = 12;
