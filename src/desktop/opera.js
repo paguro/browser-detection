@@ -1,10 +1,10 @@
 import { detectOS } from '../os';
 import {
-  ENGINE_BLINK,
-  ENGINE_WEBKIT,
-  ENGINE_PRESTO,
-  detectEngine
-} from '../engine';
+  LAYOUT_BLINK,
+  LAYOUT_WEBKIT,
+  LAYOUT_PRESTO,
+  detectLayout
+} from '../layout';
 import { hasFeature } from '../feature';
 
 // References
@@ -20,11 +20,11 @@ export function detectOpera() {
 
   var browser = 'Opera';
   var browserVersion;
-  var engine = detectEngine();
+  var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed Engines:
-  if ([ENGINE_BLINK, ENGINE_WEBKIT, ENGINE_PRESTO].indexOf(engine) === -1) {
+  // Allowed Layouts:
+  if ([LAYOUT_BLINK, LAYOUT_WEBKIT, LAYOUT_PRESTO].indexOf(layout) === -1) {
     return;
   }
 
@@ -165,8 +165,8 @@ export function detectOpera() {
       return {
         browser: browser,
         browserVersion: browserVersion,
-        engine: engine,
-        engineVersion: undefined,
+        layout: layout,
+        layoutVersion: undefined,
         os: os,
         osVersion: undefined
       };

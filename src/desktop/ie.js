@@ -1,15 +1,15 @@
 import { detectOS } from '../os';
-import { ENGINE_TRIDENT, detectEngine } from '../engine';
+import { LAYOUT_TRIDENT, detectLayout } from '../layout';
 import { hasFeature } from '../feature';
 
 export function detectInternetExplorer() {
   var browser = 'IE';
   var browserVersion;
-  var engine = detectEngine();
+  var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed Engines:
-  if ([ENGINE_TRIDENT].indexOf(engine) === -1) {
+  // Allowed Layouts:
+  if ([LAYOUT_TRIDENT].indexOf(layout) === -1) {
     return;
   }
 
@@ -41,8 +41,8 @@ export function detectInternetExplorer() {
     return {
       browser: browser,
       browserVersion: browserVersion,
-      engine: engine,
-      engineVersion: undefined,
+      layout: layout,
+      layoutVersion: undefined,
       os: os,
       osVersion: undefined
     };

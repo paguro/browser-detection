@@ -1,17 +1,17 @@
 import { detectOS } from '../os';
-import { detectEngine, ENGINE_BLINK, ENGINE_EDGE } from '../engine';
+import { LAYOUT_EDGE, LAYOUT_BLINK, detectLayout } from '../layout';
 import { hasFeature } from '../feature';
 
 export function detectEdge() {
   var browser = 'Microsoft Edge';
   var browserVersion;
-  var engine = detectEngine();
+  var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed Engines:
+  // Allowed Layouts:
   // - EDGE
   // - BLINK https://blogs.windows.com/msedgedev/2019/11/04/edge-chromium-release-candidate-get-ready/
-  if ([ENGINE_EDGE, ENGINE_BLINK].indexOf(engine) === -1) {
+  if ([LAYOUT_EDGE, LAYOUT_BLINK].indexOf(layout) === -1) {
     return;
   }
 
@@ -47,8 +47,8 @@ export function detectEdge() {
     return {
       browser: browser,
       browserVersion: browserVersion,
-      engine: engine,
-      engineVersion: undefined,
+      layout: layout,
+      layoutVersion: undefined,
       os: os,
       osVersion: undefined
     };

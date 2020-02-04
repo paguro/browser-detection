@@ -1,15 +1,15 @@
 import { detectOS } from '../os';
-import { ENGINE_WEBKIT, detectEngine } from '../engine';
+import { LAYOUT_WEBKIT, detectLayout } from '../layout';
 import { hasFeature } from '../feature';
 
 export function detectSafariMobile() {
   var browser = 'Safari Mobile';
   var browserVersion;
-  var engine = detectEngine();
+  var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed Engines:
-  if ([ENGINE_WEBKIT].indexOf(engine) === -1) {
+  // Allowed Layouts:
+  if ([LAYOUT_WEBKIT].indexOf(layout) === -1) {
     return;
   }
 
@@ -88,8 +88,8 @@ export function detectSafariMobile() {
       return {
         browser: browser,
         browserVersion: browserVersion,
-        engine: engine,
-        engineVersion: undefined,
+        layout: layout,
+        layoutVersion: undefined,
         os: os,
         osVersion: undefined
       };
