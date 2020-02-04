@@ -24,8 +24,8 @@ console.log(detectedBrowser);
   {
      browser: 'Firefox',
      browserVersion: 67,
-     engine: 'Gecko',
-     engineVersion: 67,
+     layout: 'Gecko',
+     layoutVersion: 67,
      os: 'Windows',
      osVersion: 95
   }
