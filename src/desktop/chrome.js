@@ -16,7 +16,9 @@ export function detectChrome() {
   }
 
   if (window.chrome && !appVersion.match(/Opera|OPR\//)) {
-    if (hasFeature('GeolocationCoordinates')) {
+    if (hasFeature('HTMLVideoElement.getVideoPlaybackQuality')) {
+      browserVersion = 80;
+    } else if (hasFeature('GeolocationCoordinates')) {
       browserVersion = 79;
     } else if (hasFeature('CSS.registerProperty')) {
       browserVersion = 78;
