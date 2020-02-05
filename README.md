@@ -34,18 +34,18 @@ console.log(detectedBrowser);
 
 ## Detected browsers
 
-| Browser              | Versions |
-|----------------------|---------:|
-| Internet Explorer    |    11    |
-| Microsoft Edge       |    44    |
-| Google Chrome        |   1-80   |
-| Mozilla Firefox      |   1-73   |
-| Apple Safari         |   1-13   |
-| Opera                |   2-63   |
-| Brave                |     ?    |
-| Google Chrome Mobile |   18-80  |
-| Apple Safari Mobile  |    1-13  |
-| DuckDuckGo Mobile    |   7.34   |
+| Browser              | Latest version | Platforms                              |
+|----------------------|:--------------:|----------------------------------------|
+| Internet Explorer    |       11       | Windows XP / Windows 7+                |
+| Microsoft Edge       |       44       | Windows 10                             |
+| Google Chrome        |       80       | Windows XP / Windows 7+ / Mac OS 10.0+ |
+| Mozilla Firefox      |       73       | Windows XP / Windows 7+ / Mac OS 10.0+ |
+| Apple Safari         |       13       | Mac OS 10.0+                      |
+| Opera                |       63       | Windows XP / Windows 7+ / Mac OS 10.0+ |
+| Brave                |        ?       | Windows 7+ / Mac OS 10.10+             |
+| Google Chrome Mobile |       80       | ?                                      |
+| Apple Safari Mobile  |       13       | iOS 1+                                 |
+| DuckDuckGo Mobile    |       7.3      | ?                                      |
 
 ## Authors
 
