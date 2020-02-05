@@ -16,7 +16,7 @@ export function detectEdge() {
   }
 
   if ([LAYOUT_BLINK].indexOf(layout) !== -1) {
-    // FIXME: We need to detect differences/quicks otherwise we have false positives
+    // FIXME: We need to detect differences/quirks otherwise we have false positives
 
     //if (hasFeature('RTCIceCandidate.address')) {
     //    browserVersion = 79;
@@ -25,19 +25,19 @@ export function detectEdge() {
     return;
   } else if ([LAYOUT_EDGE].indexOf(layout) !== -1) {
     if (hasFeature('AuthenticatorAssertionResponse')) {
-      browserVersion = 44; //18
+      browserVersion = 44;
     } else if (hasFeature('Client')) {
-      browserVersion = 42; //17
+      browserVersion = 42;
     } else if (hasFeature('AbortController')) {
-      browserVersion = 41; //16
+      browserVersion = 41;
     } else if (hasFeature('CanvasRenderingContext2D.imageSmoothingEnabled')) {
-      browserVersion = 40; //15
+      browserVersion = 40;
     } else if (hasFeature('AudioContext.close')) {
-      browserVersion = 38; //14
+      browserVersion = 38;
     } else if (hasFeature('AudioBuffer.copyFromChannel')) {
-      browserVersion = 25; //13
+      browserVersion = 25;
     } else if (hasFeature('ANGLE_instanced_arrays.drawArraysInstancedANGLE')) {
-      browserVersion = 20; //12
+      browserVersion = 20;
     }
   } else {
     return;
