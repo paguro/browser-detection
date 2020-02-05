@@ -9,7 +9,8 @@
     "clean": "rm -f dist/browser-detection*.js",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "prettify": "prettier --single-quote --write './*.js' 'src/**/*.js' 'test/**/*.js'",
+    "prettify": "prettier --single-quote --write './*.js' 'src/**/*.js' 'tests/**/*.js'",
+    "test": "jest",
     "release": "yarn clean && yarn build && ./scripts/publish.sh"
   },
   "husky": {
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "husky": "4.2.1",
+    "jest": "^25.1.0",
     "lint-staged": "10.0.7",
     "platform": "^1.3.5",
     "prettier": "^1.17.1",
