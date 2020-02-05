@@ -26,7 +26,7 @@ export function detectChrome() {
       browserVersion = 77;
     } else if (hasFeature('Blob.arrayBuffer')) {
       browserVersion = 76;
-    } else if (eval('31_337') === 31337) {
+    } else if (supportNumberSeparator()) {
       // https://developers.google.com/web/updates/2019/06/nic75#num-sep
       browserVersion = 75;
     } else if (hasFeature('TextEncoder.encodeInto')) {
@@ -187,5 +187,14 @@ export function detectChrome() {
         osVersion: undefined
       };
     }
+  }
+}
+
+function supportNumberSeparator() {
+  try {
+    eval('1_000');
+    return true;
+  } catch (e) {
+    return false;
   }
 }
