@@ -16,13 +16,14 @@ export function detectEdge() {
   }
 
   if ([LAYOUT_BLINK].indexOf(layout) !== -1) {
-    // FIXME: We need to detect differences/quirks otherwise we have false positives
-
-    //if (hasFeature('RTCIceCandidate.address')) {
-    //    browserVersion = 79;
-    //}
-
-    return;
+    // Edge is eccentric:
+    if (
+      hasFeature('navigator.plugins') &&
+      navigator.plugins[0] &&
+      navigator.plugins[0].name === 'Microsoft Edge PDF Plugin'
+    ) {
+      browserVersion = 79;
+    }
   } else if ([LAYOUT_EDGE].indexOf(layout) !== -1) {
     if (hasFeature('AuthenticatorAssertionResponse')) {
       browserVersion = 44;
@@ -39,8 +40,6 @@ export function detectEdge() {
     } else if (hasFeature('ANGLE_instanced_arrays.drawArraysInstancedANGLE')) {
       browserVersion = 20;
     }
-  } else {
-    return;
   }
 
   if (browserVersion) {
