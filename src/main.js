@@ -1,3 +1,4 @@
+import $ from './helpers';
 import { detectEdge } from './desktop/edge';
 import { detectFirefox } from './desktop/firefox';
 import { detectChrome } from './desktop/chrome';
@@ -6,12 +7,11 @@ import { detectOpera } from './desktop/opera';
 import { detectSafari } from './desktop/safari';
 import { detectBrave } from './desktop/brave';
 import { detectSafariMobile } from './mobile/safari-mobile';
-import { hasFeature } from './feature';
 import { detectChromeMobile } from './mobile/chrome-mobile';
 import { detectDuckDuckGoMobile } from './mobile/duckduckgo-mobile';
 
 function isMobile() {
-  return hasFeature('orientation');
+  return $.hasFeature('orientation');
 }
 
 export default function BrowserDetection() {
@@ -31,3 +31,5 @@ export default function BrowserDetection() {
     );
   }
 }
+
+BrowserDetection.helpers = $;

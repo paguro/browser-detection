@@ -1,3 +1,5 @@
+import $ from './helpers';
+
 // https://stackoverflow.com/questions/19877924/what-is-the-list-of-possible-values-for-navigator-platform-as-of-today
 export var BROWSER_OSX = 'OS X';
 export var BROWSER_IOS = 'iOS';
@@ -8,8 +10,8 @@ export var BROWSER_UNIX = 'Unix';
 export var BROWSER_SOLARIS = 'Solaris';
 
 export function detectOS() {
-  var appVersion = window.navigator.appVersion;
-  var platform = window.navigator.platform;
+  var appVersion = $.getFeature('navigator.appVersion');
+  var platform = $.getFeature('navigator.platform');
 
   if (['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'].indexOf(platform) > -1) {
     return BROWSER_OSX;

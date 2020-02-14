@@ -1,6 +1,6 @@
+import $ from '../helpers';
 import { detectOS } from '../os';
 import { LAYOUT_WEBKIT, detectLayout } from '../layout';
-import { hasFeature } from '../feature';
 
 export function detectSafari() {
   var browser = 'Safari';
@@ -14,51 +14,51 @@ export function detectSafari() {
   }
 
   // Version detection
-  if (hasFeature('PointerEvent')) {
+  if ($.hasFeature('PointerEvent')) {
     browserVersion = 13;
-  } else if (hasFeature('IntersectionObserver')) {
+  } else if ($.hasFeature('IntersectionObserver')) {
     browserVersion = 12.1;
-  } else if (hasFeature('Element.toggleAttribute')) {
+  } else if ($.hasFeature('Element.prototype.toggleAttribute')) {
     browserVersion = 12;
-  } else if (hasFeature('AbortController')) {
+  } else if ($.hasFeature('AbortController')) {
     browserVersion = 11.1;
-  } else if (hasFeature('CSSStyleDeclaration.cssFloat')) {
+  } else if ($.hasFeature('CSSStyleDeclaration.prototype.cssFloat')) {
     browserVersion = 11;
-  } else if (hasFeature('EventTarget')) {
+  } else if ($.hasFeature('EventTarget')) {
     browserVersion = 10.1;
-  } else if (hasFeature('CSS')) {
+  } else if ($.hasFeature('CSS')) {
     browserVersion = 10;
-  } else if (hasFeature('AnimationEvent')) {
+  } else if ($.hasFeature('AnimationEvent')) {
     browserVersion = 9.1;
-  } else if (hasFeature('AnimationEvent.animationName')) {
+  } else if ($.hasFeature('AnimationEvent.prototype.animationName')) {
     browserVersion = 9;
-  } else if (hasFeature('Blob')) {
+  } else if ($.hasFeature('Blob')) {
     browserVersion = 8;
-  } else if (hasFeature('Document.createComment')) {
+  } else if ($.hasFeature('Document.prototype.createComment')) {
     browserVersion = 7;
-  } else if (hasFeature('AudioTrackList')) {
+  } else if ($.hasFeature('AudioTrackList')) {
     browserVersion = 6.1;
-  } else if (hasFeature('AnalyserNode')) {
+  } else if ($.hasFeature('AnalyserNode')) {
     browserVersion = 6;
-  } else if (hasFeature('Blob')) {
+  } else if ($.hasFeature('Blob')) {
     browserVersion = 5.1;
-  } else if (hasFeature('Document.evaluate')) {
+  } else if ($.hasFeature('Document.prototype.evaluate')) {
     browserVersion = 5;
-  } else if (hasFeature('CSSKeyframeRule')) {
+  } else if ($.hasFeature('CSSKeyframeRule')) {
     browserVersion = 4;
-  } else if (hasFeature('DOMParser')) {
+  } else if ($.hasFeature('DOMParser')) {
     browserVersion = 3.2;
-  } else if (hasFeature('CanvasGradient')) {
+  } else if ($.hasFeature('CanvasGradient')) {
     browserVersion = 3.1;
-  } else if (hasFeature('Document.createNodeIterator')) {
+  } else if ($.hasFeature('Document.prototype.createNodeIterator')) {
     browserVersion = 3;
-  } else if (hasFeature('CanvasRenderingContext2D')) {
+  } else if ($.hasFeature('CanvasRenderingContext2D')) {
     browserVersion = 2;
-  } else if (hasFeature('Document.onselectionchange')) {
+  } else if ($.hasFeature('Document.prototype.onselectionchange')) {
     browserVersion = 1.3;
-  } else if (hasFeature('HTMLMarqueeElement')) {
+  } else if ($.hasFeature('HTMLMarqueeElement')) {
     browserVersion = 1.2;
-  } else if (hasFeature('Document.getElementById')) {
+  } else if ($.hasFeature('Document.prototype.getElementById')) {
     browserVersion = 1;
   }
 

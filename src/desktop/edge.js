@@ -1,8 +1,10 @@
+import $ from '../helpers';
 import { detectOS } from '../os';
 import { LAYOUT_EDGE, LAYOUT_BLINK, detectLayout } from '../layout';
-import { hasFeature } from '../feature';
 
 export function detectEdge() {
+  var plugins = $.getFeature('navigator.plugins');
+
   var browser = 'Microsoft Edge';
   var browserVersion;
   var layout = detectLayout();
@@ -16,28 +18,32 @@ export function detectEdge() {
   }
 
   if ([LAYOUT_BLINK].indexOf(layout) !== -1) {
-    // Edge is eccentric:
+    // Edge is eccentric
     if (
-      hasFeature('navigator.plugins') &&
-      navigator.plugins[0] &&
+      plugins &&
+      plugins[0] &&
       navigator.plugins[0].name === 'Microsoft Edge PDF Plugin'
     ) {
       browserVersion = 79;
     }
   } else if ([LAYOUT_EDGE].indexOf(layout) !== -1) {
-    if (hasFeature('AuthenticatorAssertionResponse')) {
+    if ($.hasFeature('AuthenticatorAssertionResponse')) {
       browserVersion = 44;
-    } else if (hasFeature('Client')) {
+    } else if ($.hasFeature('Client')) {
       browserVersion = 42;
-    } else if (hasFeature('AbortController')) {
+    } else if ($.hasFeature('AbortController')) {
       browserVersion = 41;
-    } else if (hasFeature('CanvasRenderingContext2D.imageSmoothingEnabled')) {
+    } else if (
+      $.hasFeature('CanvasRenderingContext2D.prototype.imageSmoothingEnabled')
+    ) {
       browserVersion = 40;
-    } else if (hasFeature('AudioContext.close')) {
+    } else if ($.hasFeature('AudioContext.prototype.close')) {
       browserVersion = 38;
-    } else if (hasFeature('AudioBuffer.copyFromChannel')) {
+    } else if ($.hasFeature('AudioBuffer.prototype.copyFromChannel')) {
       browserVersion = 25;
-    } else if (hasFeature('ANGLE_instanced_arrays.drawArraysInstancedANGLE')) {
+    } else if (
+      $.hasFeature('ANGLE_instanced_arrays.drawArraysInstancedANGLE')
+    ) {
       browserVersion = 20;
     }
   }

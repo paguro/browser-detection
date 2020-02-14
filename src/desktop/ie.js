@@ -1,6 +1,6 @@
+import $ from '../helpers';
 import { detectOS } from '../os';
 import { LAYOUT_TRIDENT, detectLayout } from '../layout';
-import { hasFeature } from '../feature';
 
 export function detectInternetExplorer() {
   var browser = 'IE';
@@ -13,27 +13,27 @@ export function detectInternetExplorer() {
     return;
   }
 
-  if (hasFeature('ANGLE_instanced_arrays')) {
+  if ($.hasFeature('ANGLE_instanced_arrays')) {
     browserVersion = 11;
-  } else if (hasFeature('AnimationEvent')) {
+  } else if ($.hasFeature('AnimationEvent')) {
     browserVersion = 10;
-  } else if (hasFeature('CSSRule')) {
+  } else if ($.hasFeature('CSSRule')) {
     browserVersion = 9;
-  } else if (hasFeature('console')) {
+  } else if ($.hasFeature('console')) {
     browserVersion = 8;
-  } else if (hasFeature('HTMLElement.tabIndex')) {
+  } else if ($.hasFeature('HTMLElement.prototype.tabIndex')) {
     browserVersion = 7;
-  } else if (hasFeature('CharacterData')) {
+  } else if ($.hasFeature('CharacterData')) {
     browserVersion = 6;
-  } else if (hasFeature('document.getElementById')) {
+  } else if ($.hasFeature('document.getElementById')) {
     browserVersion = 5.5;
-  } else if (hasFeature('document.documentElement')) {
+  } else if ($.hasFeature('document.documentElement')) {
     browserVersion = 5;
-  } else if (hasFeature('document.queryCommandEnabled')) {
+  } else if ($.hasFeature('document.queryCommandEnabled')) {
     browserVersion = 4;
-  } else if (hasFeature('HTMLMarqueeElement')) {
+  } else if ($.hasFeature('HTMLMarqueeElement')) {
     browserVersion = 2;
-  } else if (hasFeature('HTMLSelectElement')) {
+  } else if ($.hasFeature('HTMLSelectElement')) {
     browserVersion = 1;
   }
 

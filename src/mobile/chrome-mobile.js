@@ -1,6 +1,6 @@
+import $ from '../helpers';
 import { detectOS } from '../os';
 import { LAYOUT_BLINK, LAYOUT_WEBKIT, detectLayout } from '../layout';
-import { hasFeature } from '../feature';
 
 export function detectChromeMobile() {
   var browser = 'Chrome Mobile';
@@ -14,122 +14,126 @@ export function detectChromeMobile() {
   }
 
   // Note: window.chrome is not set on mobile (tested on iOS)
-  if (hasFeature('window.chrome')) {
+  if ($.hasFeature('chrome')) {
     return;
   }
 
   // Note: Chrome iOS has the `window.webkit` property while Safari iOS not
-  if (!hasFeature('window.webkit')) {
+  if (!$.hasFeature('webkit')) {
     return;
   }
 
-  if (hasFeature('HTMLVideoElement.getVideoPlaybackQuality')) {
+  if ($.hasFeature('HTMLVideoElement.prototype.getVideoPlaybackQuality')) {
     browserVersion = 80;
-  } else if (hasFeature('GeolocationCoordinates')) {
+  } else if ($.hasFeature('GeolocationCoordinates')) {
     browserVersion = 79;
-  } else if (hasFeature('CSS.registerProperty')) {
+  } else if ($.hasFeature('CSS.registerProperty')) {
     browserVersion = 78;
-  } else if (hasFeature('FormDataEvent')) {
+  } else if ($.hasFeature('FormDataEvent')) {
     browserVersion = 77;
-  } else if (hasFeature('Blob.arrayBuffer')) {
+  } else if ($.hasFeature('Blob.prototype.arrayBuffer')) {
     browserVersion = 76;
-  } else if (hasFeature('Navigator.canShare')) {
+  } else if ($.hasFeature('Navigator.prototype.canShare')) {
     browserVersion = 75;
-  } else if (hasFeature('TextEncoder.encodeInto')) {
+  } else if ($.hasFeature('TextEncoder.prototype.encodeInto')) {
     browserVersion = 74;
-  } else if (hasFeature('Document.adoptedStyleSheets')) {
+  } else if ($.hasFeature('Document.prototype.adoptedStyleSheets')) {
     browserVersion = 73;
-  } else if (hasFeature('RTCPeerConnection.connectionState')) {
+  } else if ($.hasFeature('RTCPeerConnection.prototype.connectionState')) {
     browserVersion = 72;
-  } else if (hasFeature('HTMLElement.oncopy')) {
+  } else if ($.hasFeature('HTMLElement.prototype.oncopy')) {
     browserVersion = 71;
-  } else if (hasFeature('RTCPeerConnection.currentLocalDescription')) {
+  } else if (
+    $.hasFeature('RTCPeerConnection.prototype.currentLocalDescription')
+  ) {
     browserVersion = 70;
-  } else if (hasFeature('Element.toggleAttribute')) {
+  } else if ($.hasFeature('Element.prototype.toggleAttribute')) {
     browserVersion = 69;
-  } else if (hasFeature('CanvasPattern.setTransform')) {
+  } else if ($.hasFeature('CanvasPattern.prototype.setTransform')) {
     browserVersion = 68;
-  } else if (hasFeature('RTCRtpReceiver.getStats')) {
+  } else if ($.hasFeature('RTCRtpReceiver.prototype.getStats')) {
     browserVersion = 67;
-  } else if (hasFeature('AbortController')) {
+  } else if ($.hasFeature('AbortController')) {
     browserVersion = 66;
-  } else if (hasFeature('HTMLAnchorElement.relList')) {
+  } else if ($.hasFeature('HTMLAnchorElement.prototype.relList')) {
     browserVersion = 65;
-  } else if (hasFeature('Document.alinkColor')) {
+  } else if ($.hasFeature('Document.prototype.alinkColor')) {
     browserVersion = 64;
-  } else if (hasFeature('MediaStreamTrack.applyConstraints')) {
+  } else if ($.hasFeature('MediaStreamTrack.prototype.applyConstraints')) {
     browserVersion = 63;
-  } else if (hasFeature('HTMLDataElement')) {
+  } else if ($.hasFeature('HTMLDataElement')) {
     browserVersion = 62;
-  } else if (hasFeature('CSS.supports')) {
+  } else if ($.hasFeature('CSS.supports')) {
     browserVersion = 61;
-  } else if (hasFeature('DataTransfer')) {
+  } else if ($.hasFeature('DataTransfer')) {
     browserVersion = 60;
-  } else if (hasFeature('ByteLengthQueuingStrategy')) {
+  } else if ($.hasFeature('ByteLengthQueuingStrategy')) {
     browserVersion = 59;
-  } else if (hasFeature('ClipboardEvent')) {
+  } else if ($.hasFeature('ClipboardEvent')) {
     browserVersion = 58;
-  } else if (hasFeature('AudioProcessingEvent')) {
+  } else if ($.hasFeature('AudioProcessingEvent')) {
     browserVersion = 57;
-  } else if (hasFeature('DOMMatrixReadOnly.rotate')) {
+  } else if ($.hasFeature('DOMMatrixReadOnly.prototype.rotate')) {
     browserVersion = 56;
-  } else if (hasFeature('AnalyserNode')) {
+  } else if ($.hasFeature('AnalyserNode')) {
     browserVersion = 55;
-  } else if (hasFeature('CanvasRenderingContext2D.imageSmoothingQuality')) {
+  } else if (
+    $.hasFeature('CanvasRenderingContext2D.prototype.imageSmoothingQuality')
+  ) {
     browserVersion = 54;
-  } else if (hasFeature('Element.attachShadow')) {
+  } else if ($.hasFeature('Element.prototype.attachShadow')) {
     browserVersion = 53;
-  } else if (hasFeature('AudioParam.maxValue')) {
+  } else if ($.hasFeature('AudioParam.prototype.maxValue')) {
     browserVersion = 52;
-  } else if (hasFeature('CanvasCaptureMediaStreamTrack')) {
+  } else if ($.hasFeature('CanvasCaptureMediaStreamTrack')) {
     browserVersion = 51;
-  } else if (hasFeature('DOMTokenList.value')) {
+  } else if ($.hasFeature('DOMTokenList.prototype.value')) {
     browserVersion = 50;
-  } else if (hasFeature('DOMTokenList.supports')) {
+  } else if ($.hasFeature('DOMTokenList.prototype.supports')) {
     browserVersion = 49;
-  } else if (hasFeature('FontFaceSet.add')) {
+  } else if ($.hasFeature('FontFaceSet.prototype.add')) {
     browserVersion = 48;
-  } else if (hasFeature('CSSNamespaceRule')) {
+  } else if ($.hasFeature('CSSNamespaceRule')) {
     browserVersion = 47;
-  } else if (hasFeature('CSS.escape')) {
+  } else if ($.hasFeature('CSS.escape')) {
     browserVersion = 46;
-  } else if (hasFeature('CSSKeyframeRule')) {
+  } else if ($.hasFeature('CSSKeyframeRule')) {
     browserVersion = 45;
-  } else if (hasFeature('Document.scrollingElement')) {
+  } else if ($.hasFeature('Document.prototype.scrollingElement')) {
     browserVersion = 44;
-  } else if (hasFeature('AnimationEvent')) {
+  } else if ($.hasFeature('AnimationEvent')) {
     browserVersion = 43;
-  } else if (hasFeature('Element.id')) {
+  } else if ($.hasFeature('Element.prototype.id')) {
     browserVersion = 42;
-  } else if (hasFeature('Document.origin')) {
+  } else if ($.hasFeature('Document.prototype.origin')) {
     browserVersion = 41;
-  } else if (hasFeature('HTMLButtonElement.reportValidity')) {
+  } else if ($.hasFeature('HTMLButtonElement.prototype.reportValidity')) {
     browserVersion = 40;
-  } else if (hasFeature('HTMLPictureElement')) {
+  } else if ($.hasFeature('HTMLPictureElement')) {
     browserVersion = 38;
-  } else if (hasFeature('Crypto.subtle')) {
+  } else if ($.hasFeature('Crypto.prototype.subtle')) {
     browserVersion = 37;
-  } else if (hasFeature('FontFace')) {
+  } else if ($.hasFeature('FontFace')) {
     browserVersion = 35;
-  } else if (hasFeature('Element.matches')) {
+  } else if ($.hasFeature('Element.prototype.matches')) {
     browserVersion = 34;
-  } else if (hasFeature('Document.hidden')) {
+  } else if ($.hasFeature('Document.prototype.hidden')) {
     browserVersion = 33;
-  } else if (hasFeature('URL')) {
+  } else if ($.hasFeature('URL')) {
     browserVersion = 32;
-  } else if (hasFeature('Element.localName')) {
+  } else if ($.hasFeature('Element.prototype.localName')) {
     browserVersion = 31;
-  } else if (hasFeature('Document.currentScript')) {
+  } else if ($.hasFeature('Document.prototype.currentScript')) {
     browserVersion = 29;
-  } else if (hasFeature('CSS')) {
+  } else if ($.hasFeature('CSS')) {
     browserVersion = 28;
-  } else if (hasFeature('TransitionEvent')) {
+  } else if ($.hasFeature('TransitionEvent')) {
     browserVersion = 27;
-  } else if (hasFeature('HTMLTemplateElement')) {
+  } else if ($.hasFeature('HTMLTemplateElement')) {
     browserVersion = 26;
-  } else if (hasFeature('Document.createTouch')) {
+  } else if ($.hasFeature('Document.prototype.createTouch')) {
     browserVersion = 25;
-  } else if (hasFeature('AnalyserNode')) {
+  } else if ($.hasFeature('AnalyserNode')) {
     browserVersion = 18;
   }
 

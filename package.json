@@ -9,8 +9,8 @@
     "clean": "rm -f dist/browser-detection*.js",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "prettify": "prettier --single-quote --write './*.js' 'src/**/*.js' 'tests/**/*.js'",
-    "test": "jest",
+    "prettify": "prettier --single-quote --write './*.js' 'src/**/*.js' 'testing/**/*.js'",
+    "test": "yarn build && jest --testMatch='<rootDir>/testing/runner.js'",
     "release": "yarn clean && yarn build && ./scripts/publish.sh"
   },
   "husky": {
