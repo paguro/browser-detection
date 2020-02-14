@@ -17,8 +17,8 @@ export function detectEdge() {
     return;
   }
 
+  // Edge with Blink layout engine
   if ([LAYOUT_BLINK].indexOf(layout) !== -1) {
-    // Edge is eccentric
     if (
       plugins &&
       plugins[0] &&
@@ -26,6 +26,7 @@ export function detectEdge() {
     ) {
       browserVersion = 79;
     }
+    // Edge with EdgeHTML
   } else if ([LAYOUT_EDGE].indexOf(layout) !== -1) {
     if ($.hasFeature('AuthenticatorAssertionResponse')) {
       browserVersion = 44;
