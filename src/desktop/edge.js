@@ -22,7 +22,7 @@ export function detectEdge() {
     if (
       plugins &&
       plugins[0] &&
-      navigator.plugins[0].name === 'Microsoft Edge PDF Plugin'
+      plugins[0].name === 'Microsoft Edge PDF Plugin'
     ) {
       browserVersion = 79;
     }
