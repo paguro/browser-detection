@@ -5,7 +5,7 @@ import { LAYOUT_EDGE, LAYOUT_BLINK, detectLayout } from '../layout';
 export function detectEdge() {
   var plugins = $.getFeature('navigator.plugins');
 
-  var browser = 'Microsoft Edge';
+  var browser = 'Edge';
   var browserVersion;
   var layout = detectLayout();
   var os = detectOS();
