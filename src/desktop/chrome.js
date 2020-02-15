@@ -30,7 +30,7 @@ export function detectChrome() {
       // FIXME: remove function call
       // https://developers.google.com/web/updates/2019/06/nic75#num-sep
       browserVersion = 75;
-    } else if ($.hasFeature('TextEncoder.prototype.ncodeInto')) {
+    } else if ($.hasFeature('TextEncoder.prototype.encodeInto')) {
       browserVersion = 74;
     } else if ($.hasFeature('MediaSession')) {
       browserVersion = 73;
