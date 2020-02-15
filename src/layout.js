@@ -11,6 +11,7 @@ export var LAYOUT_PRESTO = 'Presto';
 export function detectLayout() {
   // EdgeHTML || Trident
   if ($.hasStyle('msScrollLimit') || $.hasStyle('behavior')) {
+    // TODO: there was `CSS.supports('(-ms-ime-align:auto)')`
     if ($.hasFeature('CSS')) {
       return LAYOUT_EDGE;
     }
