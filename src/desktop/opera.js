@@ -36,7 +36,7 @@ export function detectOpera() {
     ($.hasFeature('opera') &&
       appVersion.match(/Opera.*Presto.*Version\/([\d+.]+)/))
   ) {
-    if ($.hasFeature('IDBTransaction.commit')) {
+    if ($.hasFeature('IDBTransaction.prototype.commit')) {
       browserVersion = 63;
     } else if ($.hasFeature('Document.prototype.featurePolicy')) {
       browserVersion = 62;
