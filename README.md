@@ -42,7 +42,7 @@ console.log(detectedBrowser);
 | Mozilla Firefox      |       73       | Windows XP / Windows 7+ / Mac OS 10.0+ |
 | Apple Safari         |       13       | Mac OS 10.0+                      |
 | Opera                |       63       | Windows XP / Windows 7+ / Mac OS 10.0+ |
-| Brave                |        ?       | Windows 7+ / Mac OS 10.10+             |
+| Brave                |       1.3      | Windows 7+ / Mac OS 10.10+             |
 | Google Chrome Mobile |       80       | ?                                      |
 | Apple Safari Mobile  |       13       | iOS 1+                                 |
 | DuckDuckGo Mobile    |       7.3      | ?                                      |

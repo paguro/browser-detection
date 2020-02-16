@@ -21,13 +21,13 @@ export default function BrowserDetection() {
     );
   } else {
     return (
+      detectBrave() ||
       detectEdge() ||
       detectInternetExplorer() ||
       detectFirefox() ||
-      detectBrave() ||
       detectOpera() ||
-      detectChrome() ||
-      detectSafari()
+      detectSafari() ||
+      detectChrome()
     );
   }
 }

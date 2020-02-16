@@ -9,5 +9,8 @@ module.exports = [
   { id: 'Edge_44_Windows_10',      expected: { browser: 'Edge',    browserVersion: 44, layout: 'EdgeHTML', layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Opera_60_Windows_10',     expected: { browser: 'Opera',   browserVersion: 60, layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Opera_62_Windows_10',     expected: { browser: 'Opera',   browserVersion: 62, layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
-  { id: 'Opera_63_Windows_10',     expected: { browser: 'Opera',   browserVersion: 63, layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } }
+  { id: 'Opera_63_Windows_10',     expected: { browser: 'Opera',   browserVersion: 63, layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Brave_1.2.43_OSX_Catalina',     expected: { browser: 'Brave',   browserVersion: 1.2, layout: 'Blink',    layoutVersion: undefined, os: 'OS X', osVersion: undefined } },
+  { id: 'Brave_1.3.115_OSX_Catalina',     expected: { browser: 'Brave',   browserVersion: 1.3, layout: 'Blink',    layoutVersion: undefined, os: 'OS X', osVersion: undefined } }
+
 ];
