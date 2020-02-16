@@ -21,7 +21,7 @@ export function detectFirefox() {
       browserVersion = 73;
     } else if ($.hasFeature('FormDataEvent')) {
       browserVersion = 72;
-    } else if ($.hasFeature('MediaMetadata')) {
+    } else if ($.hasFeature('MathMLElement')) {
       browserVersion = 71;
     } else if ($.hasFeature('AudioContext.prototype.baseLatency')) {
       browserVersion = 70;
