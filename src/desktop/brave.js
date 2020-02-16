@@ -1,3 +1,4 @@
+import $ from '../helpers';
 import { detectChrome } from '../desktop/chrome';
 
 export function detectBrave() {
@@ -5,8 +6,24 @@ export function detectBrave() {
   var features = detectChrome();
 
   // Has Chrome's features
-  if (features && hasBraveProps()) {
-    features.browser = browser;
+  if (features) {
+    var plugins = $.getFeature('navigator.plugins');
+
+    if (hasBraveProps()) {
+      features.browser = browser;
+      features.browserVersion = 0.23;
+    } else if (plugins && plugins.length === 2) {
+      // FIXME: Maybe not the smartest way, but it's fine for now.
+      // Brave does not support internal-nacl-plugin
+      features.browser = browser;
+
+      if ($.hasFeature('DecompressionStream')) {
+        features.browserVersion = 1.3;
+      } else {
+        features.browserVersion = 1.2;
+      }
+    }
+
     return features;
   }
 }
