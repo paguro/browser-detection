@@ -27,7 +27,9 @@ export function detectFirefox() {
       browserVersion = 70;
     } else if ($.hasFeature('Blob.prototype.arrayBuffer')) {
       browserVersion = 69;
-    } else if ($.hasFeature('MediaDevices.prototype.secure_context_required')) {
+    } else if (
+      $.hasFeature('AudioContext.prototype.createMediaStreamTrackSource')
+    ) {
       browserVersion = 68;
     } else if ($.hasFeature('InputEvent.prototype.data')) {
       browserVersion = 67;
