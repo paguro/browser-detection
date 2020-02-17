@@ -83,7 +83,7 @@ export function detectFirefox() {
       browserVersion = 44;
     } else if ($.hasFeature('HTMLCanvasElement.prototype.captureStream')) {
       browserVersion = 43;
-    } else if ($.hasFeature('AnimationPlaybackEvent')) {
+    } else if ($.hasFeature('Reflect')) {
       browserVersion = 42;
     } else if ($.hasFeature('Document.prototype.fonts')) {
       browserVersion = 41;
