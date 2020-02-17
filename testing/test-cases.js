@@ -1,5 +1,15 @@
 // prettier-ignore
 module.exports = [
+  { id: 'Firefox_42_Windows_10',   expected: { browser: 'Firefox', browserVersion: 42, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_43_Windows_10',   expected: { browser: 'Firefox', browserVersion: 43, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_44_Windows_10',   expected: { browser: 'Firefox', browserVersion: 44, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_45_Windows_10',   expected: { browser: 'Firefox', browserVersion: 45, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_46_Windows_10',   expected: { browser: 'Firefox', browserVersion: 46, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_47_Windows_10',   expected: { browser: 'Firefox', browserVersion: 47, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_48_Windows_10',   expected: { browser: 'Firefox', browserVersion: 48, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_49_Windows_10',   expected: { browser: 'Firefox', browserVersion: 49, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_50_Windows_10',   expected: { browser: 'Firefox', browserVersion: 50, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_51_Windows_10',   expected: { browser: 'Firefox', browserVersion: 51, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Firefox_52_Windows_10',   expected: { browser: 'Firefox', browserVersion: 52, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Firefox_53_Windows_10',   expected: { browser: 'Firefox', browserVersion: 53, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Firefox_54_Windows_10',   expected: { browser: 'Firefox', browserVersion: 54, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
