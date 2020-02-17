@@ -43,9 +43,7 @@ export function detectFirefox() {
       browserVersion = 63;
     } else if ($.hasFeature('DOMPointReadOnly.prototype.toJSON')) {
       browserVersion = 62;
-    } else if (
-      $.hasFeature('PerformanceResourceTiming.prototype.serverTiming')
-    ) {
+    } else if ($.hasFeature('String.prototype.trimStart')) {
       browserVersion = 61;
     } else if ($.hasFeature('Animation.prototype.updatePlaybackRate')) {
       browserVersion = 60;
