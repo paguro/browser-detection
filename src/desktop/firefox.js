@@ -67,7 +67,7 @@ export function detectFirefox() {
       $.hasFeature('CanvasRenderingContext2D.prototype.imageSmoothingEnabled')
     ) {
       browserVersion = 51;
-    } else if ($.hasFeature('BaseAudioContext.prototype.createIIRFilter')) {
+    } else if ($.hasFeature('Object.getOwnPropertyDescriptors')) {
       browserVersion = 50;
     } else if ($.hasFeature('CanvasRenderingContext2D.prototype.filter')) {
       browserVersion = 49;
