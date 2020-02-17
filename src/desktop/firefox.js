@@ -55,7 +55,7 @@ export function detectFirefox() {
       browserVersion = 57;
     } else if ($.hasFeature('Document.prototype.onvisibilitychange')) {
       browserVersion = 56;
-    } else if ($.hasFeature('CSS.supports')) {
+    } else if ($.hasStyle('text-justify')) {
       browserVersion = 55;
     } else if ($.hasFeature('URL.prototype.toJSON')) {
       browserVersion = 54;
