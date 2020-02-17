@@ -79,7 +79,7 @@ export function detectFirefox() {
       browserVersion = 46;
     } else if ($.hasFeature('Element.prototype.getAttributeNames')) {
       browserVersion = 45;
-    } else if ($.hasFeature('CacheStorage')) {
+    } else if ($.hasFeature('URLSearchParams.prototype.entries')) {
       browserVersion = 44;
     } else if ($.hasFeature('HTMLCanvasElement.prototype.captureStream')) {
       browserVersion = 43;
