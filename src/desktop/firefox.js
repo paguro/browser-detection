@@ -61,7 +61,7 @@ export function detectFirefox() {
       browserVersion = 55;
     } else if ($.hasFeature('URL.prototype.toJSON')) {
       browserVersion = 54;
-    } else if ($.hasFeature('AnalyserNode')) {
+    } else if ($.hasStyle('caret-color')) {
       browserVersion = 53;
     } else if ($.hasFeature('ConstantSourceNode')) {
       browserVersion = 52;
