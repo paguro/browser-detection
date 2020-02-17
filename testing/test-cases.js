@@ -1,5 +1,22 @@
 // prettier-ignore
 module.exports = [
+  { id: 'Firefox_52_Windows_10',   expected: { browser: 'Firefox', browserVersion: 52, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_53_Windows_10',   expected: { browser: 'Firefox', browserVersion: 53, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_54_Windows_10',   expected: { browser: 'Firefox', browserVersion: 54, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_55_Windows_10',   expected: { browser: 'Firefox', browserVersion: 55, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_56_Windows_10',   expected: { browser: 'Firefox', browserVersion: 56, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_57_Windows_10',   expected: { browser: 'Firefox', browserVersion: 57, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_58_Windows_10',   expected: { browser: 'Firefox', browserVersion: 58, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_59_Windows_10',   expected: { browser: 'Firefox', browserVersion: 59, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_60_Windows_10',   expected: { browser: 'Firefox', browserVersion: 60, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_61_Windows_10',   expected: { browser: 'Firefox', browserVersion: 61, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_62_Windows_10',   expected: { browser: 'Firefox', browserVersion: 62, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_63_Windows_10',   expected: { browser: 'Firefox', browserVersion: 63, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_64_Windows_10',   expected: { browser: 'Firefox', browserVersion: 64, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_65_Windows_10',   expected: { browser: 'Firefox', browserVersion: 65, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_66_Windows_10',   expected: { browser: 'Firefox', browserVersion: 66, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_67_Windows_10',   expected: { browser: 'Firefox', browserVersion: 67, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_68_Windows_10',   expected: { browser: 'Firefox', browserVersion: 68, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Firefox_69_Windows_10',   expected: { browser: 'Firefox', browserVersion: 69, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Firefox_70_Windows_10',   expected: { browser: 'Firefox', browserVersion: 70, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Firefox_71_Windows_10',   expected: { browser: 'Firefox', browserVersion: 71, layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
@@ -15,7 +32,6 @@ module.exports = [
   { id: 'Opera_60_Windows_10',     expected: { browser: 'Opera',   browserVersion: 60, layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Opera_62_Windows_10',     expected: { browser: 'Opera',   browserVersion: 62, layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Opera_63_Windows_10',     expected: { browser: 'Opera',   browserVersion: 63, layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
-  { id: 'Brave_1_2_OSX_Catalina',     expected: { browser: 'Brave',   browserVersion: 1.2, layout: 'Blink',    layoutVersion: undefined, os: 'OS X', osVersion: undefined } },
-  { id: 'Brave_1_3_OSX_Catalina',     expected: { browser: 'Brave',   browserVersion: 1.3, layout: 'Blink',    layoutVersion: undefined, os: 'OS X', osVersion: undefined } }
-
+  { id: 'Brave_1_2_OSX_Catalina',  expected: { browser: 'Brave',   browserVersion: 1.2, layout: 'Blink',   layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
+  { id: 'Brave_1_3_OSX_Catalina',  expected: { browser: 'Brave',   browserVersion: 1.3, layout: 'Blink',   layoutVersion: undefined, os: 'OS X',    osVersion: undefined } }
 ];
