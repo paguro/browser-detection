@@ -3,45 +3,30 @@ import { detectChrome } from '../desktop/chrome';
 
 export function detectBrave() {
   var browser = 'Brave';
-  var features = detectChrome();
+  var browserVersion;
+  var chromeFeatures = detectChrome();
 
-  // Has Chrome's features
-  if (features) {
-    var plugins = $.getFeature('navigator.plugins');
-
-    if (hasBraveProps()) {
-      features.browser = browser;
-      features.browserVersion = 0.23;
-    } else if (plugins && plugins.length === 2) {
-      // FIXME: Maybe not the smartest way, but it's fine for now.
-      // Brave does not support internal-nacl-plugin
-      features.browser = browser;
-
-      if ($.hasFeature('DecompressionStream')) {
-        features.browserVersion = 1.3;
-      } else {
-        features.browserVersion = 1.2;
-      }
-    }
-
-    return features;
+  // Brave must have the same feature of Chrome
+  if (!chromeFeatures) {
+    return;
   }
-}
 
-function hasBraveProps() {
-  // Detect brave set up test
-  // https://www.ctrl.blog/entry/brave-user-agent-detection.html
-  // - works up to v0.23.19
-  var testElement = document.createElement('iframe');
-  testElement.style.display = 'none';
-  window.document.body.appendChild(testElement);
+  var plugins = $.getFeature('navigator.plugins');
 
-  // Empty frames only have this attribute set in Brave Shield
-  var useGoogleOnloadFired =
-    testElement.contentWindow.google_onload_fired === true;
+  // Brave does not support internal-nacl-plugin
+  // TODO: Switch to a more reliable check
+  if (!plugins || plugins.length !== 2) {
+    return;
+  }
 
-  // Teardown test
-  testElement.parentNode.removeChild(testElement);
+  if ($.hasFeature('DecompressionStream')) {
+    browserVersion = 1.3;
+  } else {
+    browserVersion = 1.2;
+  }
 
-  return useGoogleOnloadFired;
+  return Object.assign(chromeFeatures, {
+    browser: browser,
+    browserVersion: browserVersion
+  });
 }
