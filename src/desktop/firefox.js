@@ -27,7 +27,9 @@ export function detectFirefox() {
       browserVersion = 70;
     } else if ($.hasFeature('Blob.prototype.arrayBuffer')) {
       browserVersion = 69;
-    } else if ($.hasFeature('MediaDevices.prototype.secure_context_required')) {
+    } else if (
+      $.hasFeature('AudioContext.prototype.createMediaStreamTrackSource')
+    ) {
       browserVersion = 68;
     } else if ($.hasFeature('InputEvent.prototype.data')) {
       browserVersion = 67;
@@ -41,9 +43,7 @@ export function detectFirefox() {
       browserVersion = 63;
     } else if ($.hasFeature('DOMPointReadOnly.prototype.toJSON')) {
       browserVersion = 62;
-    } else if (
-      $.hasFeature('PerformanceResourceTiming.prototype.serverTiming')
-    ) {
+    } else if ($.hasFeature('String.prototype.trimStart')) {
       browserVersion = 61;
     } else if ($.hasFeature('Animation.prototype.updatePlaybackRate')) {
       browserVersion = 60;
@@ -55,11 +55,11 @@ export function detectFirefox() {
       browserVersion = 57;
     } else if ($.hasFeature('Document.prototype.onvisibilitychange')) {
       browserVersion = 56;
-    } else if ($.hasFeature('CSS.supports')) {
+    } else if ($.hasFeature('RTCRtpSender.prototype.getStats')) {
       browserVersion = 55;
     } else if ($.hasFeature('URL.prototype.toJSON')) {
       browserVersion = 54;
-    } else if ($.hasFeature('AnalyserNode')) {
+    } else if ($.hasFeature('BaseAudioContext.prototype.state')) {
       browserVersion = 53;
     } else if ($.hasFeature('ConstantSourceNode')) {
       browserVersion = 52;
@@ -67,7 +67,7 @@ export function detectFirefox() {
       $.hasFeature('CanvasRenderingContext2D.prototype.imageSmoothingEnabled')
     ) {
       browserVersion = 51;
-    } else if ($.hasFeature('BaseAudioContext.prototype.createIIRFilter')) {
+    } else if ($.hasFeature('Object.getOwnPropertyDescriptors')) {
       browserVersion = 50;
     } else if ($.hasFeature('CanvasRenderingContext2D.prototype.filter')) {
       browserVersion = 49;
@@ -79,11 +79,11 @@ export function detectFirefox() {
       browserVersion = 46;
     } else if ($.hasFeature('Element.prototype.getAttributeNames')) {
       browserVersion = 45;
-    } else if ($.hasFeature('CacheStorage')) {
+    } else if ($.hasFeature('URLSearchParams.prototype.entries')) {
       browserVersion = 44;
     } else if ($.hasFeature('HTMLCanvasElement.prototype.captureStream')) {
       browserVersion = 43;
-    } else if ($.hasFeature('AnimationPlaybackEvent')) {
+    } else if ($.hasFeature('Reflect')) {
       browserVersion = 42;
     } else if ($.hasFeature('Document.prototype.fonts')) {
       browserVersion = 41;
