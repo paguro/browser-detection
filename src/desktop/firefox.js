@@ -55,11 +55,11 @@ export function detectFirefox() {
       browserVersion = 57;
     } else if ($.hasFeature('Document.prototype.onvisibilitychange')) {
       browserVersion = 56;
-    } else if ($.hasStyle('text-justify')) {
+    } else if ($.hasFeature('RTCRtpSender.prototype.getStats')) {
       browserVersion = 55;
     } else if ($.hasFeature('URL.prototype.toJSON')) {
       browserVersion = 54;
-    } else if ($.hasStyle('caret-color')) {
+    } else if ($.hasFeature('BaseAudioContext.prototype.state')) {
       browserVersion = 53;
     } else if ($.hasFeature('ConstantSourceNode')) {
       browserVersion = 52;
