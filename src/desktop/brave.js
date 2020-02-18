@@ -24,7 +24,9 @@ export function detectBrave() {
       }
     }
 
-    return features;
+    if (features.browser === browser) {
+      return features;
+    }
   }
 }
 
