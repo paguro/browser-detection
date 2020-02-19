@@ -24,7 +24,11 @@ export function detectEdge() {
       plugins[0] &&
       plugins[0].name === 'Microsoft Edge PDF Plugin'
     ) {
-      browserVersion = 79;
+      if ($.hasFeature('external.getHostEnvironmentValue.name')) {
+        browserVersion = 80;
+      } else {
+        browserVersion = 79;
+      }
     }
     // Edge with EdgeHTML
   } else if ([LAYOUT_EDGE].indexOf(layout) !== -1) {
