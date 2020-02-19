@@ -12,7 +12,7 @@ export function detectEdge() {
 
   // Allowed Layouts:
   // - EDGE
-  // - BLINK
+  // - BLINK https://blogs.windows.com/msedgedev/2019/11/04/edge-chromium-release-candidate-get-ready/
   if ([LAYOUT_EDGE, LAYOUT_BLINK].indexOf(layout) === -1) {
     return;
   }
