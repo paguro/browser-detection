@@ -18,7 +18,7 @@ export function detectEdge() {
   }
 
   // Edge with Blink layout engine
-  if ([LAYOUT_BLINK].indexOf(layout) !== -1) {
+  if (layout === LAYOUT_BLINK) {
     if (
       plugins &&
       plugins[0] &&
@@ -27,7 +27,7 @@ export function detectEdge() {
       browserVersion = 79;
     }
     // Edge with EdgeHTML
-  } else if ([LAYOUT_EDGE].indexOf(layout) !== -1) {
+  } else if (layout === LAYOUT_EDGE) {
     if ($.hasFeature('AuthenticatorAssertionResponse')) {
       browserVersion = 44;
     } else if ($.hasFeature('Client')) {
