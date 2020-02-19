@@ -2,6 +2,8 @@ import $ from '../helpers';
 import { detectChrome } from '../desktop/chrome';
 
 export function detectBrave() {
+  var plugins = $.getFeature('navigator.plugins');
+
   var browser = 'Brave';
   var browserVersion;
   var chromeFeatures = detectChrome();
@@ -10,8 +12,6 @@ export function detectBrave() {
   if (!chromeFeatures) {
     return;
   }
-
-  var plugins = $.getFeature('navigator.plugins');
 
   // Brave does not support internal-nacl-plugin
   // TODO: Switch to a more reliable check
