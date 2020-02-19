@@ -16,7 +16,11 @@ export function detectChrome() {
   }
 
   if ($.hasFeature('chrome') && !appVersion.match(/Opera|OPR\//)) {
-    if ($.hasFeature('HTMLVideoElement.prototype.getVideoPlaybackQuality')) {
+    if ($.hasFeature('SubmitEvent.prototype.submitter')) {
+      browserVersion = 81;
+    } else if (
+      $.hasFeature('HTMLVideoElement.prototype.getVideoPlaybackQuality')
+    ) {
       browserVersion = 80;
     } else if ($.hasFeature('GeolocationCoordinates')) {
       browserVersion = 79;

@@ -38,6 +38,8 @@ module.exports = [
   { id: 'Chrome_78_Linux_x86_64',  expected: { browser: 'Chrome',  browserVersion: 78,  layout: 'Blink',    layoutVersion: undefined, os: 'Linux',   osVersion: undefined } },
   { id: 'Chrome_79_Windows_10',    expected: { browser: 'Chrome',  browserVersion: 79,  layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Chrome_80_Windows_10',    expected: { browser: 'Chrome',  browserVersion: 80,  layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Chrome_80_OSX_Catalina',  expected: { browser: 'Chrome',  browserVersion: 80,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
+  { id: 'Chrome_81_OSX_Catalina',  expected: { browser: 'Chrome',  browserVersion: 81,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'IE_11_Windows_10',        expected: { browser: 'IE',      browserVersion: 11,  layout: 'Trident',  layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Edge_44_Windows_10',      expected: { browser: 'Edge',    browserVersion: 44,  layout: 'EdgeHTML', layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Edge_79_OSX_Catalina',    expected: { browser: 'Edge',    browserVersion: 79,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
