@@ -41,7 +41,7 @@ console.log(detectedBrowser);
 | Google Chrome        |       80       | Windows XP / Windows 7+ / Mac OS 10.0+ |
 | Mozilla Firefox      |       73       | Windows XP / Windows 7+ / Mac OS 10.0+ |
 | Apple Safari         |       13       | Mac OS 10.0+                      |
-| Opera                |       63       | Windows XP / Windows 7+ / Mac OS 10.0+ |
+| Opera                |       67       | Windows XP / Windows 7+ / Mac OS 10.0+ |
 | Brave                |       1.3      | Windows 7+ / Mac OS 10.10+             |
 | Google Chrome Mobile |       80       | ?                                      |
 | Apple Safari Mobile  |       13       | iOS 1+                                 |
