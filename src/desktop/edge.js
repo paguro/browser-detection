@@ -24,7 +24,7 @@ export function detectEdge() {
       plugins[0] &&
       plugins[0].name === 'Microsoft Edge PDF Plugin'
     ) {
-      if ($.hasFeature('external.getHostEnvironmentValue.name')) {
+      if ($.hasFeature('VideoPlaybackQuality.prototype.creationTime')) {
         browserVersion = 80;
       } else {
         browserVersion = 79;
