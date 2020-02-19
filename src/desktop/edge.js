@@ -30,7 +30,7 @@ export function detectEdge() {
   } else if ([LAYOUT_EDGE].indexOf(layout) !== -1) {
     if ($.hasFeature('AuthenticatorAssertionResponse')) {
       browserVersion = 44;
-    } else if ($.hasFeature('Client')) {
+    } else if ($.hasFeature('PaymentRequestUpdateEvent.prototype.bubbles')) {
       browserVersion = 42;
     } else if ($.hasFeature('AbortController')) {
       browserVersion = 41;
