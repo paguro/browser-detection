@@ -14,6 +14,7 @@ import {
 //      - =>15  https://help.opera.com/en/opera-version-history/
 // - Legacy features http://www.howtocreate.co.uk/operaStuff/operaObject.html
 // - Opera Objects http://www.howtocreate.co.uk/operaStuff/operaObject.html
+// Download Opera form here: http://get.opera.com/ftp/pub/opera/desktop/
 
 export function detectOpera() {
   var appVersion = $.getFeature('navigator.appVersion');
@@ -36,7 +37,15 @@ export function detectOpera() {
     ($.hasFeature('opera') &&
       appVersion.match(/Opera.*Presto.*Version\/([\d+.]+)/))
   ) {
-    if ($.hasFeature('IDBTransaction.prototype.commit')) {
+    if ($.hasFeature('HTMLVideoElement.getVideoPlaybackQuality')) {
+      browserVersion = 67;
+    } else if ($.hasFeature('HTMLScriptElement.prototype.onanimationend')) {
+      browserVersion = 66;
+    } else if ($.hasFeature('CSS.registerProperty')) {
+      browserVersion = 65;
+    } else if ($.hasFeature('FormDataEvent.prototype.formData')) {
+      browserVersion = 64;
+    } else if ($.hasFeature('IDBTransaction.prototype.commit')) {
       browserVersion = 63;
     } else if ($.hasFeature('Document.prototype.featurePolicy')) {
       browserVersion = 62;
@@ -44,9 +53,11 @@ export function detectOpera() {
       browserVersion = 60;
     } else if ($.hasFeature('Element.prototype.requestFullscreen')) {
       browserVersion = 58;
-    } else if ($.hasFeature('Bluetooth')) {
+    } else if (
+      $.hasFeature('webkitRTCPeerConnection.prototype.currentLocalDescription')
+    ) {
       browserVersion = 57;
-    } else if ($.hasFeature('AbsoluteOrientationSensor')) {
+    } else if ($.hasFeature('OffscreenCanvas.prototype.convertToBlob')) {
       browserVersion = 56;
     } else if ($.hasFeature('CustomElementRegistry.prototype.upgrade')) {
       browserVersion = 55;
@@ -54,11 +65,11 @@ export function detectOpera() {
       browserVersion = 54;
     } else if ($.hasFeature('AbortController')) {
       browserVersion = 53;
-    } else if ($.hasFeature('CSS.paintWorklet')) {
+    } else if ($.hasFeature('PerformanceServerTiming.prototype.name')) {
       browserVersion = 52;
-    } else if ($.hasFeature('EventTarget')) {
+    } else if ($.hasFeature('Request.prototype.cache')) {
       browserVersion = 51;
-    } else if ($.hasFeature('Navigator.prototype.deviceMemory')) {
+    } else if ($.hasFeature('OverconstrainedError.prototype.constraint')) {
       browserVersion = 50;
     } else if ($.hasFeature('HTMLDataElement')) {
       browserVersion = 49;
