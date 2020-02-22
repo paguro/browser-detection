@@ -77,7 +77,7 @@ export function detectOpera() {
       browserVersion = 48;
     } else if ($.hasFeature('MessagePort.prototype.onmessageerror')) {
       browserVersion = 47;
-    } else if ($.hasFeature('ByteLengthQueuingStrategy.size')) {
+    } else if ($.hasFeature('ImageCapture.prototype.takePhoto')) {
       browserVersion = 46;
     } else if ($.hasFeature('AudioContext.prototype.baseLatency')) {
       browserVersion = 45;
