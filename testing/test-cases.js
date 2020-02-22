@@ -46,6 +46,7 @@ module.exports = [
   { id: 'Edge_42_Windows_10',      expected: { browser: 'Edge',    browserVersion: 42,  layout: 'EdgeHTML', layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Edge_44_Windows_10',      expected: { browser: 'Edge',    browserVersion: 44,  layout: 'EdgeHTML', layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Edge_79_OSX_Catalina',    expected: { browser: 'Edge',    browserVersion: 79,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
+  { id: 'Edge_80_OSX_Catalina',    expected: { browser: 'Edge',    browserVersion: 80,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Edge_80_Windows_10',      expected: { browser: 'Edge',    browserVersion: 80,  layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Opera_60_Windows_10',     expected: { browser: 'Opera',   browserVersion: 60,  layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Opera_62_Windows_10',     expected: { browser: 'Opera',   browserVersion: 62,  layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
