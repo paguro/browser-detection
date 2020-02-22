@@ -52,6 +52,7 @@ module.exports = [
 { id: 'Opera_40_OSX_Catalina',   expected: { browser: 'Opera',   browserVersion: 40,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
 { id: 'Opera_41_OSX_Catalina',   expected: { browser: 'Opera',   browserVersion: 41,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
 { id: 'Opera_42_OSX_Catalina',   expected: { browser: 'Opera',   browserVersion: 42,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
+{ id: 'Opera_43_OSX_Catalina',   expected: { browser: 'Opera',   browserVersion: 43,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
 { id: 'Opera_44_OSX_Catalina',   expected: { browser: 'Opera',   browserVersion: 44,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
 { id: 'Opera_45_OSX_Catalina',   expected: { browser: 'Opera',   browserVersion: 45,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
 { id: 'Opera_46_OSX_Catalina',   expected: { browser: 'Opera',   browserVersion: 46,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
