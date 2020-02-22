@@ -48,6 +48,10 @@ module.exports = [
   { id: 'Opera_60_Windows_10',     expected: { browser: 'Opera',   browserVersion: 60,  layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Opera_62_Windows_10',     expected: { browser: 'Opera',   browserVersion: 62,  layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Opera_63_Windows_10',     expected: { browser: 'Opera',   browserVersion: 63,  layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
-  { id: 'Brave_1_2_OSX_Catalina',  expected: { browser: 'Brave',   browserVersion: 1.2, layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
+  { id: 'Brave_0_69_OSX_Catalina', expected: { browser: 'Brave',   browserVersion: 0.69,layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
+  // { id: 'Brave_0_70_OSX_Catalina', expected: { browser: 'Brave',   browserVersion: 0.70,layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
+  { id: 'Brave_1_OSX_Catalina',    expected: { browser: 'Brave',   browserVersion: 1,   layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
+  { id: 'Brave_1_1_OSX_Catalina',  expected: { browser: 'Brave',   browserVersion: 1.1, layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
+  //{ id: 'Brave_1_2_OSX_Catalina',  expected: { browser: 'Brave',   browserVersion: 1.2, layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Brave_1_3_OSX_Catalina',  expected: { browser: 'Brave',   browserVersion: 1.3, layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } }
 ];
