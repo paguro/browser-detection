@@ -75,9 +75,9 @@ export function detectOpera() {
       browserVersion = 49;
     } else if ($.hasFeature('DOMMatrix')) {
       browserVersion = 48;
-    } else if ($.hasFeature('BroadcastChannel.prototype.onmessageerror')) {
+    } else if ($.hasFeature('MessagePort.prototype.onmessageerror')) {
       browserVersion = 47;
-    } else if ($.hasFeature('ByteLengthQueuingStrategy')) {
+    } else if ($.hasFeature('ByteLengthQueuingStrategy.size')) {
       browserVersion = 46;
     } else if ($.hasFeature('AudioContext.prototype.baseLatency')) {
       browserVersion = 45;
@@ -87,15 +87,15 @@ export function detectOpera() {
       $.hasFeature('BaseAudioContext.prototype.createConstantSource')
     ) {
       browserVersion = 43;
-    } else if ($.hasFeature('AnalyserNode')) {
+    } else if ($.hasFeature('MediaKeySession.prototype.onmessage')) {
       browserVersion = 42;
-    } else if ($.hasFeature('BroadcastChannel')) {
+    } else if ($.hasFeature('BroadcastChannel.prototype.close')) {
       browserVersion = 41;
     } else if ($.hasFeature('Element.prototype.attachShadow')) {
       browserVersion = 40;
     } else if ($.hasFeature('AudioListener.prototype.forwardX')) {
       browserVersion = 39;
-    } else if ($.hasFeature('Element.prototype.scrollIntoView')) {
+    } else if ($.hasFeature('PerformanceObserver.prototype.observe')) {
       browserVersion = 38;
     } else if ($.hasFeature('DOMTokenList.prototype.value')) {
       browserVersion = 37;
