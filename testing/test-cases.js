@@ -55,6 +55,8 @@ module.exports = [
   { id: 'Firefox_73_Linux_x86_64', expected: { browser: 'Firefox',       browserVersion: 73,  layout: 'Gecko',    layoutVersion: undefined, os: 'Linux',   osVersion: undefined } },
   { id: 'Firefox_73_Windows_10',   expected: { browser: 'Firefox',       browserVersion: 73,  layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'IE_11_Windows_10',        expected: { browser: 'IE',            browserVersion: 11,  layout: 'Trident',  layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Opera_37_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 37,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
+  { id: 'Opera_38_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 38,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Opera_39_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 39,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Opera_40_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 40,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Opera_41_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 41,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
