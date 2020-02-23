@@ -95,7 +95,7 @@ export function detectOpera() {
       browserVersion = 40;
     } else if ($.hasFeature('AudioListener.prototype.forwardX')) {
       browserVersion = 39;
-    } else if ($.hasFeature('PerformanceObserver.prototype.observe')) {
+    } else if ($.hasFeature('Node.prototype.isConnected')) {
       browserVersion = 38;
     } else if ($.hasFeature('DOMTokenList.prototype.value')) {
       browserVersion = 37;
