@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const zlib = require('zlib');
 const retrocycle = require('./utils/retrocycle');
 
@@ -8,9 +9,9 @@ const TestCases = require('./test-cases.js');
 TestCases.forEach(testCase => {
   const { id, expected } = testCase;
 
-  const datasetPath = `./testing/dataset/${id}.json.gz`;
+  const bomPath = path.join('testing', 'dataset', `${id}.json.gz`);
 
-  const compressedJson = fs.readFileSync(datasetPath);
+  const compressedJson = fs.readFileSync(bomPath);
   const json = zlib.gunzipSync(compressedJson);
 
   const { window } = retrocycle(JSON.parse(json));
