@@ -31,6 +31,7 @@ filenames.forEach(function(filename) {
     // Clean up the location
     window.origin = TEST_ORIGIN;
 
+    window.document.title = 'title';
     window.document.URL = TEST_URL;
     window.document.baseURI = TEST_URL;
     window.document.documentURI = TEST_URL;
