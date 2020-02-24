@@ -38,7 +38,7 @@ console.log(detectedBrowser);
 |----------------------|:--------------:|----------------------------------------|
 | Internet Explorer    |       11       | Windows XP / Windows 7+                |
 | Microsoft Edge       |       44       | Windows 10                             |
-| Google Chrome        |       80       | Windows XP / Windows 7+ / Mac OS 10.0+ |
+| Google Chrome        |       81       | Windows XP / Windows 7+ / Mac OS 10.0+ |
 | Mozilla Firefox      |       73       | Windows XP / Windows 7+ / Mac OS 10.0+ |
 | Apple Safari         |       13       | Mac OS 10.0+                      |
 | Opera                |       66       | Windows XP / Windows 7+ / Mac OS 10.0+ |
