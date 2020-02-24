@@ -30,7 +30,7 @@ export function detectChrome() {
       browserVersion = 77;
     } else if ($.hasFeature('Blob.prototype.arrayBuffer')) {
       browserVersion = 76;
-    } else if ($.hasStyle('HTMLVideoElement.prototype.playsInline')) {
+    } else if ($.hasFeature('Animation.prototype.effect')) {
       browserVersion = 75;
     } else if ($.hasFeature('TextEncoder.prototype.encodeInto')) {
       browserVersion = 74;
@@ -50,15 +50,17 @@ export function detectChrome() {
       browserVersion = 67;
     } else if ($.hasFeature('AbortController')) {
       browserVersion = 66;
-    } else if ($.hasFeature('CSSStyleRule.prototype.styleMap')) {
+    } else if ($.hasFeature('PerformanceObserver.prototype.takeRecords')) {
       browserVersion = 65;
     } else if ($.hasFeature('Document.prototype.alinkColor')) {
       browserVersion = 64;
-    } else if ($.hasFeature('WindowEventHandlers.prototype.onafterprint')) {
+    } else if ($.hasFeature('HTMLFrameSetElement.prototype.onbeforeprint')) {
       browserVersion = 63;
     } else if ($.hasFeature('HTMLDataElement')) {
       browserVersion = 62;
-    } else if ($.hasFeature('DOMMatrixReadOnly.transform')) {
+    } else if (
+      $.hasFeature('SVGAnimationElement.prototype.getAttributeNames')
+    ) {
       browserVersion = 61;
     } else if ($.hasFeature('BroadcastChannel.prototype.onmessageerror')) {
       browserVersion = 60;
