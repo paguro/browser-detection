@@ -54,15 +54,15 @@ export function detectChrome() {
       browserVersion = 65;
     } else if ($.hasFeature('Document.prototype.alinkColor')) {
       browserVersion = 64;
-    } else if ($.hasFeature('MediaStreamTrack.prototype.applyConstraints')) {
+    } else if ($.hasFeature('WindowEventHandlers.prototype.onafterprint')) {
       browserVersion = 63;
     } else if ($.hasFeature('HTMLDataElement')) {
       browserVersion = 62;
-    } else if ($.hasFeature('CSS.supports')) {
+    } else if ($.hasFeature('DOMMatrixReadOnly.transform')) {
       browserVersion = 61;
     } else if ($.hasFeature('BroadcastChannel.prototype.onmessageerror')) {
       browserVersion = 60;
-    } else if ($.hasFeature('BaseAudioContext.prototype.createPeriodicWave')) {
+    } else if ($.hasFeature('ImageCapture.prototype.getPhotoCapabilities')) {
       browserVersion = 59;
     } else if ($.hasFeature('AudioContext.prototype.baseLatency')) {
       browserVersion = 58;
@@ -72,7 +72,7 @@ export function detectChrome() {
       $.hasFeature('BaseAudioContext.prototype.createConstantSource')
     ) {
       browserVersion = 56;
-    } else if ($.hasFeature('AnalyserNode')) {
+    } else if ($.hasFeature('BudgetService.prototype.getBudget')) {
       browserVersion = 55;
     } else if ($.hasFeature('BroadcastChannel')) {
       browserVersion = 54;
@@ -84,13 +84,15 @@ export function detectChrome() {
       browserVersion = 51;
     } else if ($.hasFeature('DOMTokenList.prototype.value')) {
       browserVersion = 50;
-    } else if ($.hasFeature('BaseAudioContext.prototype.createIIRFilter')) {
+    } else if ($.hasFeature('URLSearchParams.prototype.toString')) {
       browserVersion = 49;
-    } else if ($.hasFeature('IDBIndex.prototype.getAll')) {
+    } else if ($.hasFeature('webkitIDBIndex.prototype.getAll')) {
       browserVersion = 48;
     } else if ($.hasFeature('CSSNamespaceRule')) {
       browserVersion = 47;
-    } else if ($.hasFeature('Attr.prototype.localName')) {
+    } else if (
+      $.hasFeature('Performance.prototype.onresourcetimingbufferfull')
+    ) {
       browserVersion = 46;
     } else if ($.hasFeature('BeforeInstallPromptEvent')) {
       browserVersion = 45;
