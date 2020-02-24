@@ -30,7 +30,7 @@ export function detectChrome() {
       browserVersion = 77;
     } else if ($.hasFeature('Blob.prototype.arrayBuffer')) {
       browserVersion = 76;
-    } else if ($.hasStyle('scroll-snap-stop')) {
+    } else if ($.hasStyle('HTMLVideoElement.prototype.playsInline')) {
       browserVersion = 75;
     } else if ($.hasFeature('TextEncoder.prototype.encodeInto')) {
       browserVersion = 74;
