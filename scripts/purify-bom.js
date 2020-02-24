@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
 
-require('../testing/utils/cycle');
+const dumpObject = require('../testing/utils/dumpObject');
+const retrocycle = require('../testing/utils/retrocycle');
 
 const TEST_PROTOCOL = 'http';
 const TEST_HOSTNAME = 'test.browser-detection.paguro';
@@ -22,10 +23,10 @@ filenames.forEach(function(filename) {
   const bomPath = path.join(datasetPath, filename);
   console.log(`Processing ${bomPath}`);
 
-  const compressedJson = fs.readFileSync(bomPath);
-  const json = zlib.gunzipSync(compressedJson);
+  const compressedInput = fs.readFileSync(bomPath);
+  const input = zlib.gunzipSync(compressedInput);
 
-  const { window } = JSON.retrocycle(JSON.parse(json.toString()));
+  const { window } = retrocycle(JSON.parse(input));
 
   try {
     // Clean up the location
@@ -85,11 +86,11 @@ filenames.forEach(function(filename) {
       window.document[tagName].outerText = '';
     });
   } catch (e) {
-    console.error(`WARNING: skipped "${bomPath}"`);
+    console.warn(`WARNING: unable to process "${bomPath}"`);
   }
 
-  const outputObject = dumpObject({ window: window }, 'window');
-  const outputJson = JSON.stringify(outputObject);
+  const output = JSON.stringify(dumpObject({ window: window }, 'window'));
+  const compressedOutput = zlib.gzipSync(output);
 
-  fs.writeFileSync(bomPath, zlib.gzipSync(outputJson));
+  fs.writeFileSync(bomPath, compressedOutput);
 });
