@@ -1,9 +1,9 @@
 const fs = require('fs');
 const zlib = require('zlib');
+const retrocycle = require('./utils/retrocycle');
+
 const BrowserDetection = require('../dist/browser-detection');
 const TestCases = require('./test-cases.js');
-
-require('./utils/cycle');
 
 TestCases.forEach(testCase => {
   const { id, expected } = testCase;
@@ -13,7 +13,7 @@ TestCases.forEach(testCase => {
   const compressedJson = fs.readFileSync(datasetPath);
   const json = zlib.gunzipSync(compressedJson);
 
-  const { window } = JSON.retrocycle(JSON.parse(json));
+  const { window } = retrocycle(JSON.parse(json));
 
   it(`Testing ${id}`, () => {
     BrowserDetection.helpers.windowObject = window;
