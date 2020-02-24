@@ -86,5 +86,5 @@ module.exports = [
   { id: 'Opera_64_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 64,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Opera_65_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 65,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Opera_66_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 66,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
-  { id: 'Safari_13.3_iOS',         expected: { browser: 'Safari Mobile', browserVersion: 13,  layout: 'WebKit',   layoutVersion: undefined, os: 'iOS',     osVersion: undefined } }
+  { id: 'Safari_13_3_iOS',         expected: { browser: 'Safari Mobile', browserVersion: 13,  layout: 'WebKit',   layoutVersion: undefined, os: 'iOS',     osVersion: undefined } }
 ];
