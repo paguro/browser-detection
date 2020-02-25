@@ -12,7 +12,7 @@ var helpers = {
   getProperty: function(target, path) {
     var segment;
 
-    path = path.split(/\./);
+    path = path.split('.');
 
     while ((segment = path.shift())) {
       if (!(segment in target)) {
