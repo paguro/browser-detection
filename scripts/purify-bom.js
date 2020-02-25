@@ -31,6 +31,8 @@ filenames.forEach(function(filename) {
   try {
     // Clean up the location
     window.origin = TEST_ORIGIN;
+    window.document.origin = TEST_ORIGIN;
+    window.document.defaultView.origin = TEST_ORIGIN;
 
     window.document.title = 'title';
     window.document.URL = TEST_URL;
@@ -38,7 +40,6 @@ filenames.forEach(function(filename) {
     window.document.baseURI = TEST_URL;
     window.document.domain = TEST_HOSTNAME;
     window.document.anchors = [];
-    window.document.defaultView.origin = TEST_ORIGIN;
 
     // IE
     if ('nameProp' in window.document) {
