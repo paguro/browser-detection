@@ -31,13 +31,31 @@ filenames.forEach(function(filename) {
   try {
     // Clean up the location
     window.origin = TEST_ORIGIN;
+    window.document.origin = TEST_ORIGIN;
+    window.document.defaultView.origin = TEST_ORIGIN;
 
     window.document.title = 'title';
     window.document.URL = TEST_URL;
-    window.document.baseURI = TEST_URL;
     window.document.documentURI = TEST_URL;
+    window.document.baseURI = TEST_URL;
     window.document.domain = TEST_HOSTNAME;
+    window.document.referrer = '';
+    window.document.anchors = [];
 
+    // IE features
+    if ('nameProp' in window.document) {
+      window.document.nameProp = 'title';
+    }
+
+    if ('URLUnencoded' in window.document) {
+      window.document.URLUnencoded = TEST_URL;
+    }
+
+    // Clean the scripts
+    window.document.scripts = [];
+    window.document.currentScript = null;
+
+    // Clean up the DOM
     Array.prototype.forEach.call(window.document.childNodes, node => {
       node.URL = TEST_URL;
       node.baseURI = TEST_URL;
@@ -61,10 +79,6 @@ filenames.forEach(function(filename) {
     window.document.location.port = TEST_PORT;
     window.document.location.pathname = TEST_PATHNAME;
 
-    // Clean up the DOM
-    window.document.scripts = [];
-    window.document.currentScript = null;
-
     window.document.documentElement.textContent = '';
     window.document.documentElement.innerHTML = '';
     window.document.documentElement.outerHTML = '';
@@ -78,6 +92,8 @@ filenames.forEach(function(filename) {
       window.document[tagName].lastChild = null;
       window.document[tagName].firstElementChild = null;
       window.document[tagName].lastElementChild = null;
+      window.document[tagName].nextElementSibling = null;
+      window.document[tagName].previousElementSibling = null;
       window.document[tagName].childElementCount = 0;
       window.document[tagName].textContent = '';
       window.document[tagName].innerHTML = '';
@@ -87,6 +103,7 @@ filenames.forEach(function(filename) {
     });
   } catch (e) {
     console.warn(`WARNING: unable to process "${bomPath}"`);
+    console.warn(e);
   }
 
   const output = JSON.stringify(dumpObject({ window: window }, 'window'));

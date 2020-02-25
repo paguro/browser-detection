@@ -87,8 +87,8 @@ module.exports = [
   { id: 'Firefox_72_Linux_x86_64', expected: { browser: 'Firefox',       browserVersion: 72,  layout: 'Gecko',    layoutVersion: undefined, os: 'Linux',   osVersion: undefined } },
   { id: 'Firefox_72_OSX_Catalina', expected: { browser: 'Firefox',       browserVersion: 72,  layout: 'Gecko',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Firefox_72_Windows_10',   expected: { browser: 'Firefox',       browserVersion: 72,  layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
-  { id: 'Firefox_73_Linux_x86_64', expected: { browser: 'Firefox',       browserVersion: 73,  layout: 'Gecko',    layoutVersion: undefined, os: 'Linux',   osVersion: undefined } },
   { id: 'Firefox_73_Windows_10',   expected: { browser: 'Firefox',       browserVersion: 73,  layout: 'Gecko',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
+  { id: 'Firefox_73_Linux_x86_64', expected: { browser: 'Firefox',       browserVersion: 73,  layout: 'Gecko',    layoutVersion: undefined, os: 'Linux',   osVersion: undefined } },
   { id: 'IE_11_Windows_10',        expected: { browser: 'IE',            browserVersion: 11,  layout: 'Trident',  layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Opera_37_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 37,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Opera_38_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 38,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
@@ -122,5 +122,5 @@ module.exports = [
   { id: 'Opera_65_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 65,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Opera_66_OSX_Catalina',   expected: { browser: 'Opera',         browserVersion: 66,  layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Safari_13_OSX_Catalina',  expected: { browser: 'Safari',        browserVersion: 13,  layout: 'WebKit',   layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
-  { id: 'Safari_13_3_iOS',         expected: { browser: 'Safari Mobile', browserVersion: 13,  layout: 'WebKit',   layoutVersion: undefined, os: 'iOS',     osVersion: undefined } }
+  { id: 'Safari_13_iOS',           expected: { browser: 'Safari Mobile', browserVersion: 13,  layout: 'WebKit',   layoutVersion: undefined, os: 'iOS',     osVersion: undefined } }
 ];
