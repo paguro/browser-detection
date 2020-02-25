@@ -34,7 +34,7 @@ module.exports = function dumpObject(input, key) {
     // Handle objects and functions
     if (typeof value === 'object' || typeof value === 'function') {
       // Prevent circular references
-      var propertyPath = propertyReferences.get(value);
+      const propertyPath = propertyReferences.get(value);
 
       if (propertyPath !== undefined) {
         root[key] = { $ref: propertyPath };

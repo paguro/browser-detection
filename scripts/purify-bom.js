@@ -34,9 +34,11 @@ filenames.forEach(function(filename) {
 
     window.document.title = 'title';
     window.document.URL = TEST_URL;
+    window.document.URLUnencoded = TEST_URL;
     window.document.baseURI = TEST_URL;
     window.document.documentURI = TEST_URL;
     window.document.domain = TEST_HOSTNAME;
+    window.document.anchors = [];
 
     Array.prototype.forEach.call(window.document.childNodes, node => {
       node.URL = TEST_URL;
@@ -78,6 +80,8 @@ filenames.forEach(function(filename) {
       window.document[tagName].lastChild = null;
       window.document[tagName].firstElementChild = null;
       window.document[tagName].lastElementChild = null;
+      window.document[tagName].nextElementSibling = null;
+      window.document[tagName].previousElementSibling = null;
       window.document[tagName].childElementCount = 0;
       window.document[tagName].textContent = '';
       window.document[tagName].innerHTML = '';
@@ -87,6 +91,7 @@ filenames.forEach(function(filename) {
     });
   } catch (e) {
     console.warn(`WARNING: unable to process "${bomPath}"`);
+    console.warn(e);
   }
 
   const output = JSON.stringify(dumpObject({ window: window }, 'window'));
