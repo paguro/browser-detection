@@ -33,13 +33,18 @@ filenames.forEach(function(filename) {
     window.origin = TEST_ORIGIN;
 
     window.document.title = 'title';
-    window.document.nameProp = 'title';
     window.document.URL = TEST_URL;
-    window.document.URLUnencoded = TEST_URL;
-    window.document.baseURI = TEST_URL;
     window.document.documentURI = TEST_URL;
+    window.document.baseURI = TEST_URL;
     window.document.domain = TEST_HOSTNAME;
     window.document.anchors = [];
+    window.document.defaultView.origin = TEST_ORIGIN;
+
+    // IE
+    if ('nameProp' in window.document) {
+      window.document.nameProp = 'title';
+      window.document.URLUnencoded = TEST_URL;
+    }
 
     Array.prototype.forEach.call(window.document.childNodes, node => {
       node.URL = TEST_URL;
