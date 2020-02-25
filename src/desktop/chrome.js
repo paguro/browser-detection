@@ -74,7 +74,7 @@ export function detectChrome() {
       $.hasFeature('BaseAudioContext.prototype.createConstantSource')
     ) {
       browserVersion = 56;
-    } else if ($.hasFeature('BudgetService.prototype.getBudget')) {
+    } else if ($.hasFeature('Element.prototype.setPointerCapture')) {
       browserVersion = 55;
     } else if ($.hasFeature('BroadcastChannel')) {
       browserVersion = 54;
