@@ -4,6 +4,11 @@
 
 JavaScript library for detecting browsers and platforms using feature testing.
 
+It doesn't rely on the User-Agent string
+[\[1\]](https://www.zdnet.com/article/google-to-phase-out-user-agent-strings-in-chrome/)
+[\[2\]](https://forums.developer.apple.com/thread/119186)
+and provides the most accurate client-side detection.
+
 ## Getting started
 
 To add _Paguro's Browser Detection_ library to your project:
