@@ -14,7 +14,11 @@ var helpers = {
 
     path = path.split(/\./);
 
-    while ((segment = path.shift()) && typeof target !== 'undefined') {
+    while ((segment = path.shift())) {
+      if (!(segment in target)) {
+        return;
+      }
+
       target = target[segment];
     }
 
