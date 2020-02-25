@@ -33,6 +33,7 @@ filenames.forEach(function(filename) {
     window.origin = TEST_ORIGIN;
 
     window.document.title = 'title';
+    window.document.nameProp = 'title';
     window.document.URL = TEST_URL;
     window.document.URLUnencoded = TEST_URL;
     window.document.baseURI = TEST_URL;
