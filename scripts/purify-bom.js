@@ -39,6 +39,7 @@ filenames.forEach(function(filename) {
     window.document.documentURI = TEST_URL;
     window.document.baseURI = TEST_URL;
     window.document.domain = TEST_HOSTNAME;
+    window.document.referrer = '';
     window.document.anchors = [];
 
     // IE
