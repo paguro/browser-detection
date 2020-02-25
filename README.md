@@ -32,25 +32,55 @@ console.log(detectedBrowser);
 */
 ```
 
-## Detected browsers
+## Detection
 
-| Browser              | Latest version | Platforms                              |
-|----------------------|:--------------:|----------------------------------------|
-| Internet Explorer    |       11       | Windows XP / Windows 7+                |
-| Microsoft Edge       |       44       | Windows 10                             |
-| Google Chrome        |       81       | Windows XP / Windows 7+ / Mac OS 10.0+ |
-| Mozilla Firefox      |       73       | Windows XP / Windows 7+ / Mac OS 10.0+ |
-| Apple Safari         |       13       | Mac OS 10.0+                      |
-| Opera                |       66       | Windows XP / Windows 7+ / Mac OS 10.0+ |
-| Brave                |       1.3      | Windows 7+ / Mac OS 10.10+             |
-| Google Chrome Mobile |       80       | ?                                      |
-| Apple Safari Mobile  |       13       | iOS 1+                                 |
-| DuckDuckGo Mobile    |       7.3      | ?                                      |
+### Browsers
+
+| Browser            | Latest version |
+|--------------------|:--------------:|
+| Internet Explorer  |       11       |
+| Edge               |     44 / 80    |
+| Chrome             |       81       |
+| Firefox            |       73       |
+| Safari             |       13       |
+| Opera              |       66       |
+| Brave              |       1.3      |
+
+### Layout engines
+
+| Browser    | Latest version |
+|------------|:--------------:|
+| Trident    |       -        |
+| EdgeHTML   |       -        |
+| Gecko      |       -        |
+| WebKit     |       -        |
+| Blink      |       -        |
+| KHTML      |       -        |
+| Presto     |       -        |
+
+### Operating systems
+
+| Browser    | Latest version |
+|------------|:--------------:|
+| OS X       |       -        |
+| Windows    |       -        |
+| Linux      |       -        |
+| Unix       |       -        |
+| Solaris    |       -        |
+| iOS        |       -        |
+| Android    |       -        |
+
+
+## Roadmap for Release 0.2.0
+
+- [ ] Support for mobile browsers (most popular ones)
+- [ ] Populate the field `layoutVersion`
+- [ ] Populate the field `osVersion`
 
 ## Authors
 
-* **Giacomo Trudu** - [Wicker25](https://github.com/Wicker25)
-* **Giuseppe Trotta** - [ohpe](https://github.com/ohpe)
+- **Giacomo Trudu** - [Wicker25](https://github.com/Wicker25)
+- **Giuseppe Trotta** - [ohpe](https://github.com/ohpe)
 
 See also the list of [contributors](https://github.com/Wicker25/browser-detection/graphs/contributors)
 who participated in this project.
