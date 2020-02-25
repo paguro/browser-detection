@@ -51,6 +51,11 @@ filenames.forEach(function(filename) {
       window.document.URLUnencoded = TEST_URL;
     }
 
+    // Clean the scripts
+    window.document.scripts = [];
+    window.document.currentScript = null;
+
+    // Clean up the DOM
     Array.prototype.forEach.call(window.document.childNodes, node => {
       node.URL = TEST_URL;
       node.baseURI = TEST_URL;
@@ -73,10 +78,6 @@ filenames.forEach(function(filename) {
     window.document.location.hostname = TEST_HOSTNAME;
     window.document.location.port = TEST_PORT;
     window.document.location.pathname = TEST_PATHNAME;
-
-    // Clean up the DOM
-    window.document.scripts = [];
-    window.document.currentScript = null;
 
     window.document.documentElement.textContent = '';
     window.document.documentElement.innerHTML = '';
