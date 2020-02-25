@@ -42,9 +42,12 @@ filenames.forEach(function(filename) {
     window.document.referrer = '';
     window.document.anchors = [];
 
-    // IE
+    // IE features
     if ('nameProp' in window.document) {
       window.document.nameProp = 'title';
+    }
+
+    if ('URLUnencoded' in window.document) {
       window.document.URLUnencoded = TEST_URL;
     }
 
