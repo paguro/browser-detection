@@ -22,11 +22,7 @@ export function detectBrave() {
   // Plugins have been introduced in v0.68
   // The number of supported plugins is just 2 and despite other Chromium-based browsers
   if (plugins.length === 2) {
-    if (false) {
-      // v1.4.95 Upgraded Chromium to 80.0.3987.122
-      // TODO: This should be fixed when Chromium is add to the checks
-      browserVersion = 1.4;
-    } else if ($.hasFeature('DecompressionStream')) {
+    if ($.hasFeature('DecompressionStream')) {
       browserVersion = 1.3;
     } else if ($.hasFeature('Geolocation.prototype.getCurrentPosition')) {
       browserVersion = 1.1;
