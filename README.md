@@ -76,7 +76,7 @@ console.log(detectedBrowser);
 | iOS        |       -        |
 | Android    |       -        |
 
-## Known Bugs and Issues
+## Known bugs and issues
 
 - The fields `layoutVersion` and `osVersion` are not populated yet
 
