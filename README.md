@@ -4,10 +4,11 @@
 
 JavaScript library for detecting browsers and platforms using feature testing.
 
-It doesn't rely on the User-Agent string
+* **Accurate**: it doesn't rely on the User-Agent string like other libraries
 [\[1\]](https://www.zdnet.com/article/google-to-phase-out-user-agent-strings-in-chrome/)
-[\[2\]](https://forums.developer.apple.com/thread/119186)
-and provides the most accurate client-side detection.
+[\[2\]](https://forums.developer.apple.com/thread/119186) .
+
+* **Solid**: it's tested against a [large dataset](testing/test-cases.js) of Browser Object Model (BOM).
 
 ## Getting started
 
@@ -87,7 +88,7 @@ console.log(detectedBrowser);
 - **Giacomo Trudu** - [Wicker25](https://github.com/Wicker25)
 - **Giuseppe Trotta** - [ohpe](https://github.com/ohpe)
 
-See also the list of [contributors](https://github.com/Wicker25/browser-detection/graphs/contributors)
+See also the list of [contributors](https://github.com/paguro/browser-detection/graphs/contributors)
 who participated in this project.
 
 ## License
