@@ -76,6 +76,9 @@ console.log(detectedBrowser);
 | iOS        |       -        |
 | Android    |       -        |
 
+## Known bugs and issues
+
+- The fields `layoutVersion` and `osVersion` are not populated yet
 
 ## Roadmap for Release 0.2.0
 
