@@ -14,13 +14,13 @@ export function detectBrave() {
     return;
   }
 
-  // Plugins have been introduced in v0.68
-  // The number of supported plugins is just 2 and despite other Chromium-based browsers
   // Brave does not support the Native Client plugin (internal-nacl-plugin)
-  if (plugins.length !== 2 && $.hasFeature('navigator.plugins.Native Client')) {
+  if ($.hasFeature('navigator.plugins.Native Client')) {
     return;
   }
 
+  // Plugins have been introduced in v0.68
+  // The number of supported plugins is just 2 and despite other Chromium-based browsers
   if (plugins.length === 2) {
     if (false) {
       // v1.4.95 Upgraded Chromium to 80.0.3987.122
