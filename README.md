@@ -6,7 +6,7 @@ JavaScript library for detecting browsers and platforms using feature testing.
 
 * **Accurate**: it doesn't rely on the User-Agent string like other libraries
 [\[1\]](https://www.zdnet.com/article/google-to-phase-out-user-agent-strings-in-chrome/)
-[\[2\]](https://forums.developer.apple.com/thread/119186) .
+[\[2\]](https://forums.developer.apple.com/thread/119186).
 
 * **Solid**: it's tested against a [large dataset](testing/test-cases.js) of Browser Object Model (BOM).
 
