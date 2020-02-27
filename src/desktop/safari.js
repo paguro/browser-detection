@@ -60,16 +60,16 @@ export function detectSafari() {
     browserVersion = 1.2;
   } else if ($.hasFeature('Document.prototype.getElementById')) {
     browserVersion = 1;
+  } else {
+    return;
   }
 
-  if (browserVersion) {
-    return {
-      browser: browser,
-      browserVersion: browserVersion,
-      layout: layout,
-      layoutVersion: undefined,
-      os: os,
-      osVersion: undefined
-    };
-  }
+  return {
+    browser: browser,
+    browserVersion: browserVersion,
+    layout: layout,
+    layoutVersion: undefined,
+    os: os,
+    osVersion: undefined
+  };
 }
