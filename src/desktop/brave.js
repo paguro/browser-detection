@@ -49,12 +49,12 @@ export function detectBrave() {
     } else if ($.hasFeature('RTCRtpContributingSource.prototype.constructor')) {
       browserVersion = 0.6;
     }
+  } else {
+    return;
   }
 
-  if (browserVersion) {
-    return Object.assign(chromeFeatures, {
-      browser: browser,
-      browserVersion: browserVersion
-    });
-  }
+  return Object.assign(chromeFeatures, {
+    browser: browser,
+    browserVersion: browserVersion
+  });
 }
