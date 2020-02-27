@@ -35,16 +35,16 @@ export function detectInternetExplorer() {
     browserVersion = 2;
   } else if ($.hasFeature('HTMLSelectElement')) {
     browserVersion = 1;
+  } else {
+    return;
   }
 
-  if (browserVersion) {
-    return {
-      browser: browser,
-      browserVersion: browserVersion,
-      layout: layout,
-      layoutVersion: undefined,
-      os: os,
-      osVersion: undefined
-    };
-  }
+  return {
+    browser: browser,
+    browserVersion: browserVersion,
+    layout: layout,
+    layoutVersion: undefined,
+    os: os,
+    osVersion: undefined
+  };
 }
