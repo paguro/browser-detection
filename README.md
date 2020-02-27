@@ -8,7 +8,8 @@ JavaScript library for detecting browsers and platforms using feature testing.
 [\[1\]](https://www.zdnet.com/article/google-to-phase-out-user-agent-strings-in-chrome/)
 [\[2\]](https://forums.developer.apple.com/thread/119186).
 
-* **Solid**: it's tested against a [large dataset](testing/test-cases.js) of Browser Object Model (BOM).
+* **Solid**: it's tested against a [large dataset](https://github.com/paguro/browser-detection/blob/master/testing/test-cases.js)
+of Browser Object Model (BOM).
 
 ## Getting started
 
@@ -96,4 +97,4 @@ who participated in this project.
 
 ## License
 
-_Paguro's Browser Detection_ is [MIT licensed](LICENSE).
+_Paguro's Browser Detection_ is [MIT licensed](https://github.com/paguro/browser-detection/blob/master/LICENSE).
