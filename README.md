@@ -86,6 +86,7 @@ console.log(detectedBrowser);
 - [ ] Support for mobile browsers (most popular ones)
 - [ ] Populate the field `layoutVersion`
 - [ ] Populate the field `osVersion`
+- [ ] Sandbox to prevent feature spoofing
 
 ## Authors
 
