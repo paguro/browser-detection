@@ -24,7 +24,7 @@ export function detectOpera() {
   var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed Layouts:
+  // Allowed layouts
   if ([LAYOUT_BLINK, LAYOUT_WEBKIT, LAYOUT_PRESTO].indexOf(layout) === -1) {
     return;
   }

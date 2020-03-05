@@ -8,7 +8,7 @@ export function detectDuckDuckGoMobile() {
   var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed Layouts:
+  // Allowed layouts
   if ([LAYOUT_WEBKIT].indexOf(layout) === -1) {
     return;
   }

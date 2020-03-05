@@ -24,6 +24,9 @@ var helpers = {
 
     return target;
   },
+  isMobile: function() {
+    return helpers.hasFeature('orientation');
+  },
   windowObject: window
 };
 
