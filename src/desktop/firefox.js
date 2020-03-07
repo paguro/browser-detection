@@ -8,7 +8,7 @@ export function detectFirefox() {
   var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed Layouts:
+  // Allowed layouts
   if ([LAYOUT_GECKO].indexOf(layout) === -1) {
     return;
   }

@@ -6,30 +6,17 @@ import { detectInternetExplorer } from './desktop/ie';
 import { detectOpera } from './desktop/opera';
 import { detectSafari } from './desktop/safari';
 import { detectBrave } from './desktop/brave';
-import { detectSafariMobile } from './mobile/safari-mobile';
-import { detectChromeMobile } from './mobile/chrome-mobile';
-import { detectDuckDuckGoMobile } from './mobile/duckduckgo-mobile';
-
-function isMobile() {
-  return $.hasFeature('orientation');
-}
 
 export default function BrowserDetection() {
-  if (isMobile()) {
-    return (
-      detectDuckDuckGoMobile() || detectChromeMobile() || detectSafariMobile()
-    );
-  } else {
-    return (
-      detectBrave() ||
-      detectEdge() ||
-      detectInternetExplorer() ||
-      detectFirefox() ||
-      detectOpera() ||
-      detectSafari() ||
-      detectChrome()
-    );
-  }
+  return (
+    detectBrave() ||
+    detectEdge() ||
+    detectInternetExplorer() ||
+    detectFirefox() ||
+    detectOpera() ||
+    detectSafari() ||
+    detectChrome()
+  );
 }
 
 BrowserDetection.helpers = $;

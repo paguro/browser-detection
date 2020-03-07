@@ -10,7 +10,7 @@ export function detectEdge() {
   var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed Layouts:
+  // Allowed layouts
   // - EDGE
   // - BLINK https://blogs.windows.com/msedgedev/2019/11/04/edge-chromium-release-candidate-get-ready/
   if ([LAYOUT_EDGE, LAYOUT_BLINK].indexOf(layout) === -1) {

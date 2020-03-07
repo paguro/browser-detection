@@ -8,7 +8,7 @@ export function detectInternetExplorer() {
   var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed Layouts:
+  // Allowed layouts
   if ([LAYOUT_TRIDENT].indexOf(layout) === -1) {
     return;
   }
