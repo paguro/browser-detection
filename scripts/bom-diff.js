@@ -13,7 +13,7 @@ function loadBOM(filePath) {
 function getTree(root) {
   const output = [];
 
-  const references = new WeakMap();
+  const references = new Set();
   const stack = [[root, '$']];
 
   let state;
@@ -28,7 +28,7 @@ function getTree(root) {
         continue;
       }
 
-      references.set(node, path);
+      references.add(node);
 
       Object.keys(node).forEach(key => {
         stack.unshift([node[key], path + '[' + JSON.stringify(key) + ']']);
@@ -43,6 +43,10 @@ function getTree(root) {
 
 function getTreeDiff(tree1, tree2) {
   const treeDiff = [];
+  const tree2Set = new Set();
+
+  // Use a set to improve the performance
+  tree2.forEach(path => tree2Set.add(path));
 
   tree1.forEach(path => {
     // Keep only the parent nodes
@@ -52,7 +56,7 @@ function getTreeDiff(tree1, tree2) {
       }
     }
 
-    if (!tree2.includes(path)) {
+    if (!tree2Set.has(path)) {
       treeDiff.push(path);
     }
   });
