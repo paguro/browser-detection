@@ -112,7 +112,9 @@ fileNames.forEach(function(fileName) {
     });
 
     Object.entries(window.navigator.mimeTypes).forEach(node => {
-      node[1].enabledPlugin = null;
+      if (node[1]) {
+        node[1].enabledPlugin = null;
+      }
     });
   } catch (e) {
     console.warn(`WARNING: unable to process "${filePath}"`);
