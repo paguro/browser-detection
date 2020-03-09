@@ -1,13 +1,19 @@
 const fs = require('fs');
+const path = require('path');
 const zlib = require('zlib');
 
 const retrocycle = require('../utils/retrocycle');
 
 function loadBOM(filePath) {
-  const compressedInput = fs.readFileSync(filePath.toString());
-  const input = zlib.gunzipSync(compressedInput);
+  try {
+    const compressedInput = fs.readFileSync(filePath.toString());
+    const input = zlib.gunzipSync(compressedInput);
 
-  return retrocycle(JSON.parse(input.toString()));
+    return retrocycle(JSON.parse(input.toString()));
+  } catch (e) {
+    console.error(`Couln\'t open file "${filePath}": \n  ${e.message}`);
+    process.exit(1);
+  }
 }
 
 function getTree(root) {
@@ -19,9 +25,9 @@ function getTree(root) {
   let state;
 
   while ((state = stack.pop())) {
-    const [node, path] = state;
+    const [node, nodePath] = state;
 
-    output.push(path);
+    output.push(nodePath);
 
     if (typeof node === 'object' && node !== null) {
       if (references.has(node)) {
@@ -31,7 +37,7 @@ function getTree(root) {
       references.add(node);
 
       Object.keys(node).forEach(key => {
-        stack.unshift([node[key], path + '[' + JSON.stringify(key) + ']']);
+        stack.unshift([node[key], nodePath + '[' + JSON.stringify(key) + ']']);
       });
     }
   }
@@ -46,32 +52,35 @@ function getTreeDiff(tree1, tree2) {
   const tree2Set = new Set();
 
   // Use a set to improve the performance
-  tree2.forEach(path => tree2Set.add(path));
+  tree2.forEach(nodePath => tree2Set.add(nodePath));
 
-  tree1.forEach(path => {
+  tree1.forEach(nodePath => {
     // Keep only the parent nodes
     if (treeDiff.length) {
-      if (path.startsWith(treeDiff[treeDiff.length - 1])) {
+      if (nodePath.startsWith(treeDiff[treeDiff.length - 1])) {
         return;
       }
     }
 
-    if (!tree2Set.has(path)) {
-      treeDiff.push(path);
+    if (!tree2Set.has(nodePath)) {
+      treeDiff.push(nodePath);
     }
   });
 
   return treeDiff;
 }
 
-const bom1 = loadBOM(process.argv[2]);
-const bom2 = loadBOM(process.argv[3]);
+const bom1Path = path.normalize(process.argv[2]);
+const bom2Path = path.normalize(process.argv[3]);
+
+const bom1 = loadBOM(bom1Path);
+const bom2 = loadBOM(bom2Path);
 
 const tree1 = getTree(bom1);
 const tree2 = getTree(bom2);
 
 // Print the output
 const output = getTreeDiff(tree1, tree2);
-output.forEach(path => console.log(path));
+output.forEach(nodePath => console.log(nodePath));
 
 process.exit(0);
