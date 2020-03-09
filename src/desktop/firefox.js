@@ -38,7 +38,7 @@ export function detectFirefox() {
     browserVersion = 67;
   } else if ($.hasFeature('HTMLSlotElement.prototype.assignedElements')) {
     browserVersion = 66;
-  } else if ($.hasFeature('Document.prototype.hasStorageAccess')) {
+  } else if ($.hasFeature('HTMLMarqueeElement')) {
     browserVersion = 65;
   } else if ($.hasFeature('Document.prototype.exitFullscreen')) {
     browserVersion = 64;
