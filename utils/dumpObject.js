@@ -8,6 +8,12 @@ module.exports = function dumpObject(input, key) {
   while ((state = stack.pop())) {
     const [root, key, value, path] = state;
 
+    // Limit for nested objects
+    if ((path.match(/\[/g) || []).length > 10) {
+      output[key] = null;
+      continue;
+    }
+
     // Handle null values
     if (value === null) {
       root[key] = null;

@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const zlib = require('zlib');
 
-const dumpObject = require('../testing/utils/dumpObject');
-const retrocycle = require('../testing/utils/retrocycle');
+const dumpObject = require('../utils/dumpObject');
+const retrocycle = require('../utils/retrocycle');
 
 const TEST_PROTOCOL = 'http';
 const TEST_HOSTNAME = 'test.browser-detection.paguro';
@@ -13,20 +13,20 @@ const TEST_URL = `${TEST_PROTOCOL}://${TEST_HOSTNAME}:${TEST_PORT}${TEST_PATHNAM
 const TEST_ORIGIN = `${TEST_PROTOCOL}://${TEST_HOSTNAME}:${TEST_PORT}`;
 
 const datasetPath = path.join('testing', 'dataset');
-const filenames = fs.readdirSync(datasetPath);
+const fileNames = fs.readdirSync(datasetPath);
 
-filenames.forEach(function(filename) {
-  if (path.extname(filename) !== '.gz') {
+fileNames.forEach(function(fileName) {
+  if (path.extname(fileName) !== '.gz') {
     return;
   }
 
-  const bomPath = path.join(datasetPath, filename);
-  console.log(`Processing ${bomPath}`);
+  const filePath = path.join(datasetPath, fileName);
+  console.log(`Processing ${filePath}`);
 
-  const compressedInput = fs.readFileSync(bomPath);
+  const compressedInput = fs.readFileSync(filePath);
   const input = zlib.gunzipSync(compressedInput);
 
-  const { window } = retrocycle(JSON.parse(input));
+  const { window } = retrocycle(JSON.parse(input.toString()));
 
   try {
     // Clean up the location
@@ -101,13 +101,30 @@ filenames.forEach(function(filename) {
       window.document[tagName].innerText = '';
       window.document[tagName].outerText = '';
     });
+
+    // Clean the nested plugins (for Safari)
+    Array.prototype.forEach.call(window.navigator.plugins, node => {
+      Object.keys(node).forEach(key => {
+        if (/^[0-9]+$/.test(key)) {
+          delete node[key];
+        }
+      });
+    });
+
+    Object.entries(window.navigator.mimeTypes).forEach(node => {
+      if (node[1]) {
+        node[1].enabledPlugin = null;
+      }
+    });
   } catch (e) {
-    console.warn(`WARNING: unable to process "${bomPath}"`);
+    console.warn(`WARNING: unable to process "${filePath}"`);
     console.warn(e);
   }
 
   const output = JSON.stringify(dumpObject({ window: window }, 'window'));
   const compressedOutput = zlib.gzipSync(output);
 
-  fs.writeFileSync(bomPath, compressedOutput);
+  fs.writeFileSync(filePath, compressedOutput);
 });
+
+process.exit(0);
