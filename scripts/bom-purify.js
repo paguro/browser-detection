@@ -101,6 +101,19 @@ fileNames.forEach(function(fileName) {
       window.document[tagName].innerText = '';
       window.document[tagName].outerText = '';
     });
+
+    // Clean the nested plugins (for Safari)
+    Array.prototype.forEach.call(window.navigator.plugins, node => {
+      Object.keys(node).forEach(key => {
+        if (/^[0-9]+$/.test(key)) {
+          delete node[key];
+        }
+      });
+    });
+
+    Object.entries(window.navigator.mimeTypes).forEach(node => {
+      node[1].enabledPlugin = null;
+    });
   } catch (e) {
     console.warn(`WARNING: unable to process "${filePath}"`);
     console.warn(e);
