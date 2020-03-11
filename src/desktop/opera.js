@@ -1,20 +1,7 @@
 import $ from '../helpers';
+import { detectChromium } from './chromium';
+import { detectLayout } from '../layout';
 import { detectOS } from '../os';
-import {
-  LAYOUT_BLINK,
-  LAYOUT_WEBKIT,
-  LAYOUT_PRESTO,
-  detectLayout
-} from '../layout';
-
-// References
-// - https://it.wikipedia.org/wiki/Opera_(browser)#Cronologia_delle_versioni
-// - Opera version history:
-//      - 1-12.18 https://help.opera.com/en/operas-archived-history/
-//      - =>15  https://help.opera.com/en/opera-version-history/
-// - Legacy features http://www.howtocreate.co.uk/operaStuff/operaObject.html
-// - Opera Objects http://www.howtocreate.co.uk/operaStuff/operaObject.html
-// Download Opera form here: http://get.opera.com/ftp/pub/opera/desktop/
 
 export function detectOpera() {
   var appVersion = $.getFeature('navigator.appVersion');
@@ -24,51 +11,31 @@ export function detectOpera() {
   var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed layouts
-  if ([LAYOUT_BLINK, LAYOUT_WEBKIT, LAYOUT_PRESTO].indexOf(layout) === -1) {
-    return;
-  }
-
-  var isLegacyOpera =
-    $.hasFeature('opera') &&
-    appVersion.match(/Opera.*Presto.*Version\/([\d+.]+)/);
-
   // Blink or WebKit-based Opera
   var isOpera = appVersion.match(/Opera|OPR\//);
-
-  if (!isLegacyOpera && !isOpera) {
+  if (!isOpera) {
     return;
   }
 
-  if ($.hasFeature('HTMLVideoElement.getVideoPlaybackQuality')) {
-    browserVersion = 67;
-  } else if ($.hasFeature('HTMLScriptElement.prototype.onanimationend')) {
-    browserVersion = 66;
-  } else if ($.hasFeature('CSS.registerProperty')) {
-    browserVersion = 65;
-  } else if ($.hasFeature('FormDataEvent.prototype.formData')) {
-    browserVersion = 64;
-  } else if ($.hasFeature('IDBTransaction.prototype.commit')) {
-    browserVersion = 63;
-  } else if ($.hasFeature('Document.prototype.featurePolicy')) {
-    browserVersion = 62;
-  } else if ($.hasFeature('ShadowRoot.prototype.adoptedStyleSheets')) {
-    browserVersion = 60;
-  } else if ($.hasFeature('Element.prototype.requestFullscreen')) {
-    browserVersion = 58;
-  } else if (
-    $.hasFeature('webkitRTCPeerConnection.prototype.currentLocalDescription')
-  ) {
-    browserVersion = 57;
-  } else if ($.hasFeature('OffscreenCanvas.prototype.convertToBlob')) {
-    browserVersion = 56;
-  } else if ($.hasFeature('CustomElementRegistry.prototype.upgrade')) {
-    browserVersion = 55;
-  } else if ($.hasFeature('InputDeviceInfo.prototype.getCapabilities')) {
-    browserVersion = 54;
-  } else if ($.hasFeature('AbortController')) {
-    browserVersion = 53;
-  } else if ($.hasFeature('PerformanceServerTiming.prototype.name')) {
+  // Opera is based on Chromium since v15
+  var chromiumFeatures = detectChromium();
+
+  if (chromiumFeatures) {
+    // Opera to Chromium version mapping:
+    // https://help.opera.com/en/opera-version-history/
+    var cV = chromiumFeatures.browserVersion;
+
+    browserVersion = cV - 13;
+
+    return Object.assign(chromiumFeatures, {
+      browser: browser,
+      browserVersion: browserVersion
+    });
+  }
+
+  // TODO: We have tests for Chromium only from v66.
+  //  Hence, Opera is inherited up to 53. The remaining will be checked the old-school
+  if ($.hasFeature('PerformanceServerTiming')) {
     browserVersion = 52;
   } else if ($.hasFeature('Request.prototype.cache')) {
     browserVersion = 51;
