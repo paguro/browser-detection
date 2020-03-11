@@ -19,11 +19,7 @@ export function detectChrome() {
     return;
   }
 
-  if ($.hasFeature('SubmitEvent.prototype.submitter')) {
-    browserVersion = 81;
-  } else if (
-    $.hasFeature('HTMLVideoElement.prototype.getVideoPlaybackQuality')
-  ) {
+  if ($.hasFeature('HTMLVideoElement.prototype.getVideoPlaybackQuality')) {
     browserVersion = 80;
   } else if ($.hasFeature('GeolocationCoordinates')) {
     browserVersion = 79;

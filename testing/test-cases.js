@@ -47,7 +47,6 @@ module.exports = [
   { id: 'Chrome_79_Windows_10',      expected: { browser: 'Chrome',  browserVersion: 79,   layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
   { id: 'Chrome_80_OSX_Catalina',    expected: { browser: 'Chrome',  browserVersion: 80,   layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Chrome_80_Windows_10',      expected: { browser: 'Chrome',  browserVersion: 80,   layout: 'Blink',    layoutVersion: undefined, os: 'Windows', osVersion: undefined } },
-  { id: 'Chrome_81_OSX_Catalina',    expected: { browser: 'Chrome',  browserVersion: 81,   layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Chromium_66_OSX_Catalina',  expected: { browser: 'Chromium',      browserVersion: 66,   layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Chromium_67_OSX_Catalina',  expected: { browser: 'Chromium',      browserVersion: 67,   layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
   { id: 'Chromium_68_OSX_Catalina',  expected: { browser: 'Chromium',      browserVersion: 68,   layout: 'Blink',    layoutVersion: undefined, os: 'OS X',    osVersion: undefined } },
