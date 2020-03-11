@@ -29,9 +29,9 @@ export function detectOSfromAppVersion() {
   if ((match = appVersion.match(/Windows NT (\d+)\.(\d+)/))) {
     os = BROWSER_WINDOWS;
     osVersion = WINDOWS_NT_VERSION_MAP[match[1] + '.' + match[2]];
-  } else if ((match = appVersion.match(/Mac OS X (\d+)_(\d+)(_(\d+))?/))) {
+  } else if ((match = appVersion.match(/Mac OS X ((\d+)(_(\d+))?)/))) {
     os = BROWSER_MACOS;
-    osVersion = parseFloat(match[1] + '.' + match[2]);
+    osVersion = parseFloat(match[1].replace(/_/g, '.'));
   } else if (/Linux/.test(appVersion)) {
     os = BROWSER_LINUX;
   } else if (/OpenBSD/.test(appVersion)) {
@@ -40,15 +40,15 @@ export function detectOSfromAppVersion() {
     os = BROWSER_UNIX;
   } else if (/SunOS/.test(appVersion)) {
     os = BROWSER_SOLARIS;
-  } else if ((match = appVersion.match(/OS (\d+)_(\d+)/))) {
+  } else if ((match = appVersion.match(/OS ((\d+)(_(\d+))?)/))) {
     os = BROWSER_IOS;
-    osVersion = parseFloat(match[1] + '.' + match[2]);
-  } else if ((match = appVersion.match(/iPhone OS (\d+)_(\d+)/))) {
+    osVersion = parseFloat(match[1].replace(/_/g, '.'));
+  } else if ((match = appVersion.match(/iPhone OS ((\d+)(_(\d+))?)/))) {
     os = BROWSER_IOS;
-    osVersion = parseFloat(match[1] + '.' + match[2]);
-  } else if ((match = appVersion.match(/Android (\d+)\.(\d+)(\.(\d+))?/))) {
+    osVersion = parseFloat(match[1].replace(/_/g, '.'));
+  } else if ((match = appVersion.match(/Android ((\d+)(\.(\d+))?)/))) {
     os = BROWSER_ANDROID;
-    osVersion = parseFloat(match[1] + '.' + match[2]);
+    osVersion = parseFloat(match[1]);
   } else {
     return;
   }
@@ -75,9 +75,9 @@ function detectOSfromOscpu() {
   if ((match = oscpu.match(/Windows NT (\d+)\.(\d+)/))) {
     os = BROWSER_WINDOWS;
     osVersion = WINDOWS_NT_VERSION_MAP[match[1] + '.' + match[2]];
-  } else if ((match = oscpu.match(/Mac OS X (\d+).(\d+)(_(\d+))?/))) {
+  } else if ((match = oscpu.match(/Mac OS X ((\d+)(\.(\d+))?)/))) {
     os = BROWSER_MACOS;
-    osVersion = parseFloat(match[1] + '.' + match[2]);
+    osVersion = parseFloat(match[1].replace(/_/g, '.'));
   } else if (/Linux/.test(oscpu)) {
     os = BROWSER_LINUX;
   } else if (/OpenBSD/.test(oscpu)) {
