@@ -18,37 +18,39 @@ export function detectChromium() {
     return;
   }
 
-  if ($.hasFeature('SubmitEvent.prototype.submitter')) {
-    browserVersion = 81;
-  } else if (
-    $.hasFeature('HTMLVideoElement.prototype.getVideoPlaybackQuality')
-  ) {
+  if (!$.hasFeature('navigator.plugins.Chromium PDF Viewer')) {
+    return;
+  }
+
+  if ($.hasFeature('CompressionStream')) {
     browserVersion = 80;
   } else if ($.hasFeature('GeolocationCoordinates')) {
     browserVersion = 79;
-  } else if ($.hasFeature('CSS.registerProperty')) {
+  } else if ($.hasFeature('ReadableStreamDefaultReader')) {
     browserVersion = 78;
   } else if ($.hasFeature('FormDataEvent')) {
     browserVersion = 77;
   } else if ($.hasFeature('Blob.prototype.arrayBuffer')) {
     browserVersion = 76;
-  } else if ($.hasFeature('Animation.prototype.effect')) {
+  } else if ($.hasFeature('RTCRtpReceiver.prototype.rtcpTransport')) {
     browserVersion = 75;
   } else if ($.hasFeature('TextEncoder.prototype.encodeInto')) {
     browserVersion = 74;
   } else if ($.hasFeature('MediaSession')) {
     browserVersion = 73;
-  } else if ($.hasFeature('RTCPeerConnection.prototype.connectionState')) {
+  } else if ($.hasFeature('Intl.ListFormat')) {
     browserVersion = 72;
-  } else if ($.hasFeature('Element.prototype.requestFullscreen')) {
+  } else if ($.hasFeature('TextEncoderStream')) {
     browserVersion = 71;
-  } else if ($.hasFeature('HTMLScriptElement.prototype.referrerPolicy')) {
+  } else if ($.hasFeature('Atomics')) {
     browserVersion = 70;
-  } else if ($.hasFeature('Element.prototype.toggleAttribute')) {
+  } else if (
+    $.hasFeature('webkitRTCPeerConnection.prototype.getTransceivers')
+  ) {
     browserVersion = 69;
-  } else if ($.hasFeature('AnimationEvent.prototype.pseudoElement')) {
+  } else if ($.hasFeature('CustomElementRegistry.prototype.upgrade')) {
     browserVersion = 68;
-  } else if ($.hasFeature('InputDeviceInfo.prototype.getCapabilities')) {
+  } else if ($.hasFeature('DataView.prototype.setBigUint64')) {
     browserVersion = 67;
   } else if ($.hasFeature('AbortController')) {
     browserVersion = 66;
