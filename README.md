@@ -47,7 +47,8 @@ console.log(detectedBrowser);
 |--------------------|:--------------:|
 | Internet Explorer  |       11       |
 | Edge               |     44 / 80    |
-| Chrome             |       81       |
+| Chrome             |     40 / 80    |
+| Chromium           |     40 / 80    |
 | Firefox            |       73       |
 | Safari             |       13       |
 | Opera              |       66       |
