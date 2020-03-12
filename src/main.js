@@ -1,21 +1,23 @@
 import $ from './helpers';
+import { detectChromium } from './desktop/chromium';
+import { detectBrave } from './desktop/brave';
 import { detectEdge } from './desktop/edge';
-import { detectFirefox } from './desktop/firefox';
-import { detectChrome } from './desktop/chrome';
 import { detectInternetExplorer } from './desktop/ie';
+import { detectFirefox } from './desktop/firefox';
 import { detectOpera } from './desktop/opera';
 import { detectSafari } from './desktop/safari';
-import { detectBrave } from './desktop/brave';
+import { detectChrome } from './desktop/chrome';
 
 export default function BrowserDetection() {
   return (
+    detectOpera() ||
     detectBrave() ||
     detectEdge() ||
     detectInternetExplorer() ||
     detectFirefox() ||
-    detectOpera() ||
     detectSafari() ||
-    detectChrome()
+    detectChrome() ||
+    detectChromium()
   );
 }
 
