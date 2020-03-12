@@ -18,32 +18,32 @@ export function detectBrave() {
     return;
   }
 
-  var cV = chromiumFeatures.browserVersion;
+  var chromiumVersion = chromiumFeatures.browserVersion;
 
   // Plugins have been introduced in v0.68
   // The number of supported plugins is just 2 and despite other Chromium-based browsers
   if (plugins.length === 2) {
-    if (cV === 80) {
+    if (chromiumVersion === 80) {
       browserVersion = 1.3;
-    } else if (cV === 79) {
+    } else if (chromiumVersion === 79) {
       browserVersion = 1.1;
-    } else if (cV === 78) {
+    } else if (chromiumVersion === 78) {
       browserVersion = 1.0;
-    } else if (cV === 77) {
+    } else if (chromiumVersion === 77) {
       browserVersion = 0.69;
-    } else if (cV === 76) {
+    } else if (chromiumVersion === 76) {
       browserVersion = 0.68;
     }
   } else if (plugins.length === 0) {
-    if (cV === 76) {
+    if (chromiumVersion === 76) {
       browserVersion = 0.67;
-    } else if (cV === 75) {
+    } else if (chromiumVersion === 75) {
       browserVersion = 0.65;
-    } else if (cV === 74) {
+    } else if (chromiumVersion === 74) {
       browserVersion = 0.63;
-    } else if (cV === 73) {
+    } else if (chromiumVersion === 73) {
       browserVersion = 0.61;
-    } else if (cV === 72) {
+    } else if (chromiumVersion === 72) {
       browserVersion = 0.6;
     }
   } else {
