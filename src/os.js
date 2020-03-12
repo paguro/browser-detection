@@ -1,6 +1,6 @@
 import $ from './helpers';
 
-export var BROWSER_MACOS = 'MacOS';
+export var BROWSER_MACOS = 'Mac OS';
 export var BROWSER_IOS = 'iOS';
 export var BROWSER_WINDOWS = 'Windows';
 export var BROWSER_ANDROID = 'Android';
