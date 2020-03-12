@@ -44,13 +44,11 @@ export function detectEdge() {
   }
 
   if (browserVersion) {
-    return {
+    return Object.assign(os, {
       browser: browser,
       browserVersion: browserVersion,
       layout: layout,
-      layoutVersion: undefined,
-      os: os,
-      osVersion: undefined
-    };
+      layoutVersion: undefined
+    });
   }
 }
