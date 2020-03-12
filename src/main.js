@@ -16,8 +16,8 @@ export default function BrowserDetection() {
     detectInternetExplorer() ||
     detectFirefox() ||
     detectSafari() ||
-    detectChromium() ||
-    detectChrome()
+    detectChrome() ||
+    detectChromium()
   );
 }
 
