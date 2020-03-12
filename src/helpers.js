@@ -27,7 +27,23 @@ var helpers = {
   isMobile: function() {
     return helpers.hasFeature('orientation');
   },
+
+  hasPlugin: function(name) {
+    var plugins = helpers.getFeature('navigator.plugins');
+
+    if (plugins.hasOwnProperty(name)) {
+      return true;
+    }
+
+    for (var property in plugins) {
+      if (plugins[property]['name'] && plugins[property]['name'] === name) {
+        return true;
+      }
+    }
+
+    return false;
+  },
+
   windowObject: window
 };
-
 export default helpers;

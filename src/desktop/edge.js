@@ -1,6 +1,7 @@
 import $ from '../helpers';
 import { detectOS } from '../os';
 import { LAYOUT_EDGE, LAYOUT_BLINK, detectLayout } from '../layout';
+import { detectChromium } from './chromium';
 
 export function detectEdge() {
   var plugins = $.getFeature('navigator.plugins');
@@ -10,28 +11,17 @@ export function detectEdge() {
   var layout = detectLayout();
   var os = detectOS();
 
-  // Allowed layouts
-  // - EDGE
-  // - BLINK https://blogs.windows.com/msedgedev/2019/11/04/edge-chromium-release-candidate-get-ready/
-  if ([LAYOUT_EDGE, LAYOUT_BLINK].indexOf(layout) === -1) {
-    return;
+  var chromiumFeatures = detectChromium();
+  if (chromiumFeatures) {
+    if ($.hasPlugin('Microsoft Edge PDF Plugin')) {
+      return Object.assign(chromiumFeatures, {
+        browser: browser
+      });
+    }
   }
 
-  // Edge with Blink layout engine
-  if (layout === LAYOUT_BLINK) {
-    if (
-      plugins &&
-      plugins[0] &&
-      plugins[0].name === 'Microsoft Edge PDF Plugin'
-    ) {
-      if ($.hasFeature('VideoPlaybackQuality.prototype.creationTime')) {
-        browserVersion = 80;
-      } else {
-        browserVersion = 79;
-      }
-    }
-    // Edge with EdgeHTML
-  } else if (layout === LAYOUT_EDGE) {
+  // Edge with EdgeHTML
+  if (layout === LAYOUT_EDGE) {
     if ($.hasFeature('AuthenticatorAssertionResponse')) {
       browserVersion = 44;
     } else if ($.hasFeature('PaymentRequestUpdateEvent.prototype.bubbles')) {
