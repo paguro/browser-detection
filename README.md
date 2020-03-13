@@ -49,7 +49,7 @@ console.log(detectedBrowser);
 | Edge               |     44 / 80    |
 | Chrome             |     40 / 80    |
 | Chromium           |     40 / 80    |
-| Firefox            |       73       |
+| Firefox            |       74       |
 | Safari             |       13       |
 | Opera              |       66       |
 | Brave              |       1.3      |
