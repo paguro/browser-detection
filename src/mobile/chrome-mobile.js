@@ -29,12 +29,14 @@ export function detectChromeMobile() {
   }
 
   var chromiumVersion = getChromiumVersion();
-  if (chromiumVersion) {
-    return Object.assign(os, {
-      browser: browser,
-      browserVersion: chromiumVersion,
-      layout: layout,
-      layoutVersion: undefined
-    });
+  if (!chromiumVersion) {
+    return;
   }
+
+  return Object.assign(os, {
+    browser: browser,
+    browserVersion: chromiumVersion,
+    layout: layout,
+    layoutVersion: undefined
+  });
 }
