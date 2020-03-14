@@ -12,13 +12,17 @@ export function detectOpera() {
 
   // Opera is based on Chromium since v15
   var chromiumFeatures = detectChromium();
-  if (chromiumFeatures) {
-    // Opera to Chromium version mapping:
-    // https://help.opera.com/en/opera-version-history/
-    var cV = chromiumFeatures.browserVersion;
-    return Object.assign(chromiumFeatures, {
-      browser: browser,
-      browserVersion: cV - 13
-    });
+
+  if (!chromiumFeatures) {
+    return;
   }
+
+  // For the Opera to Chromium version mapping:
+  // https://help.opera.com/en/opera-version-history/
+  var chromiumVersion = chromiumFeatures.browserVersion;
+
+  return Object.assign(chromiumFeatures, {
+    browser: browser,
+    browserVersion: chromiumVersion - 13
+  });
 }

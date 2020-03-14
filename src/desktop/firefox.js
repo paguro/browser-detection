@@ -20,7 +20,9 @@ export function detectFirefox() {
     return;
   }
 
-  if ($.hasStyle('overscroll-behavior-block')) {
+  if ($.hasFeature('ServiceWorkerRegistration.prototype.active')) {
+    browserVersion = 74;
+  } else if ($.hasStyle('overscroll-behavior-block')) {
     browserVersion = 73;
   } else if ($.hasFeature('FormDataEvent')) {
     browserVersion = 72;
