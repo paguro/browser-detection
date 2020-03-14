@@ -12,7 +12,7 @@ const TEST_PATHNAME = '/testing/index.html';
 const TEST_URL = `${TEST_PROTOCOL}://${TEST_HOSTNAME}:${TEST_PORT}${TEST_PATHNAME}`;
 const TEST_ORIGIN = `${TEST_PROTOCOL}://${TEST_HOSTNAME}:${TEST_PORT}`;
 
-const datasetPath = path.join('testing', 'new');
+const datasetPath = path.join('testing', 'dataset');
 const fileNames = fs.readdirSync(datasetPath);
 
 fileNames.forEach(function(fileName) {
