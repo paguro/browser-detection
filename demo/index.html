@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Paguro's Browser Detection</title>
+    <style>
+      table {
+        table-layout: fixed;
+      }
+
+      table,
+      th,
+      td {
+        text-align: left;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      type="application/javascript"
+      src="/libs/browser-detection.iife.js"
+    ></script>
+    <script type="application/javascript" src="/libs/ua-parser.min.js"></script>
+    <script type="application/javascript" src="/libs/platform.js"></script>
+
+    <table id="outcomeTable" style="width:100%">
+      <tr>
+        <th></th>
+        <th>Browser</th>
+        <th>Browser version</th>
+        <th>Engine</th>
+        <th>Engine version</th>
+        <th>OS</th>
+        <th>OS version</th>
+      </tr>
+    </table>
+
+    <script type="application/javascript">
+      function normalizeUAParserJs(detected) {
+        return {
+          browser: detected.browser.name,
+          browserVersion: detected.browser.version,
+          layout: detected.layout,
+          layoutVersion: detected.engine.version,
+          os: detected.os.name,
+          osVersion: detected.os.version
+        };
+      }
+
+      function normalizePlatformJs(detected) {
+        return {
+          browser: detected.name,
+          browserVersion: detected.version,
+          layout: detected.layout,
+          layoutVersion: undefined,
+          os: detected.os.family,
+          osVersion: detected.os.version
+        };
+      }
+
+      function addOutcome(libraryName, detected) {
+        var table = document.getElementById('outcomeTable');
+
+        table.innerHTML +=
+          '<tr>' +
+          '<th>' + libraryName + '</th>' +
+          '<td>' + detected.browser + '</td>' +
+          '<td>' + detected.browserVersion + '</td>' +
+          '<td>' + detected.layout + '</td>' +
+          '<td>' + detected.layoutVersion + '</td>' +
+          '<td>' + detected.os + '</td>' +
+          '<td>' + detected.osVersion + '</td>' +
+          '</tr>';
+      }
+
+      addOutcome("Paguro's Browser Detection", BrowserDetection());
+      addOutcome('UAParser.js', normalizeUAParserJs(UAParser()));
+      addOutcome('platform.js', normalizePlatformJs(window.platform));
+    </script>
+  </body>
+</html>
