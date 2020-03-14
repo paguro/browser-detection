@@ -2,36 +2,24 @@ import $ from '../helpers';
 import { detectOS } from '../os';
 import { LAYOUT_BLINK, detectLayout } from '../layout';
 
-export function detectChromium() {
-  var browser = 'Chromium';
+export function getChromiumVersion() {
   var browserVersion;
-  var layout = detectLayout();
-  var os = detectOS();
-
-  if ([LAYOUT_BLINK].indexOf(layout) === -1) {
-    return;
-  }
-
-  // TODO: It's quite ok for now, but maybe we want to improve this check
-  if (!$.hasFeature('chrome')) {
-    return;
-  }
 
   if ($.hasFeature('CompressionStream')) {
     browserVersion = 80;
   } else if ($.hasFeature('GeolocationCoordinates')) {
     browserVersion = 79;
-  } else if ($.hasFeature('ReadableStreamDefaultReader')) {
+  } else if ($.hasFeature('RTCDataChannel.prototype.maxPacketLifeTime')) {
     browserVersion = 78;
   } else if ($.hasFeature('FormDataEvent')) {
     browserVersion = 77;
-  } else if ($.hasFeature('Blob.prototype.arrayBuffer')) {
+  } else if ($.hasFeature('HTMLDocument.prototype.onsecuritypolicyviolation')) {
     browserVersion = 76;
-  } else if ($.hasFeature('RTCRtpReceiver.prototype.rtcpTransport')) {
+  } else if ($.hasFeature('HTMLVideoElement.prototype.playsInline')) {
     browserVersion = 75;
   } else if ($.hasFeature('TextEncoder.prototype.encodeInto')) {
     browserVersion = 74;
-  } else if ($.hasFeature('MediaSession')) {
+  } else if ($.hasFeature('RTCRtpReceiver.prototype.getParameters')) {
     browserVersion = 73;
   } else if ($.hasFeature('Intl.ListFormat')) {
     browserVersion = 72;
@@ -103,7 +91,28 @@ export function detectChromium() {
     browserVersion = 41;
   } else if ($.hasFeature('HTMLButtonElement.prototype.reportValidity')) {
     browserVersion = 40;
-  } else {
+  }
+
+  return browserVersion;
+}
+
+export function detectChromium() {
+  var browser = 'Chromium';
+  var browserVersion;
+  var layout = detectLayout();
+  var os = detectOS();
+
+  if ([LAYOUT_BLINK].indexOf(layout) === -1) {
+    return;
+  }
+
+  // TODO: It's quite ok for now, but maybe we want to improve this check
+  if (!$.hasFeature('chrome')) {
+    return;
+  }
+
+  browserVersion = getChromiumVersion();
+  if (!browserVersion) {
     return;
   }
 
