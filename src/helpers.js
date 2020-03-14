@@ -31,12 +31,12 @@ var helpers = {
   hasPlugin: function(name) {
     var plugins = helpers.getFeature('navigator.plugins');
 
-    if (plugins.hasOwnProperty(name)) {
+    if (typeof plugins[name] !== 'undefined') {
       return true;
     }
 
-    for (var property in plugins) {
-      if (plugins[property]['name'] && plugins[property]['name'] === name) {
+    for (var plugin in plugins) {
+      if (plugins[plugin]['name'] === name) {
         return true;
       }
     }
