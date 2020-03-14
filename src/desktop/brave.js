@@ -26,15 +26,17 @@ export function detectBrave() {
     return;
   }
 
-  // Plugins have been introduced in v0.68
-  // The number of supported plugins is just 2 despite other Chromium-based browsers
-  if (plugins.length !== 0 && plugins.length !== 2) {
+  // Plugins have been introduced in v0.68 but Brave only supports two plugins
+  var hasBravePlugins =
+    $.hasPlugin('Chrome PDF Plugin') && $.hasPlugin('Chrome PDF Viewer');
+
+  if (plugins.length !== 0 && !(plugins.length === 2 && hasBravePlugins)) {
     return;
   }
 
   browserVersion = BRAVE_VERSION_MAP[chromiumFeatures.browserVersion];
 
-  // Both 0.67 and 0.68 are based on the same Chromium version but the 0.68
+  // Both 0.67 and 0.68 are based on the same Chromium version but the last one
   // supports plugins
   if (browserVersion === 0.67 && plugins.length === 2) {
     browserVersion = 0.68;
