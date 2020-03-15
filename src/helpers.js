@@ -48,6 +48,6 @@ var helpers = {
     return false;
   },
 
-  windowObject: window
+  windowObject: typeof window !== 'undefined' ? window : null
 };
 export default helpers;
