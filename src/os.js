@@ -32,8 +32,9 @@ export function detectOSfromAppVersion() {
   } else if ((match = appVersion.match(/Mac OS X ((\d+)(_(\d+))?)/))) {
     os = BROWSER_MACOS;
     osVersion = parseFloat(match[1].replace(/_/g, '.'));
-  } else if (/Linux/.test(appVersion)) {
+  } else if ((match = appVersion.match(/Linux (i686|x86_64)/))) {
     os = BROWSER_LINUX;
+    osVersion = match[1];
   } else if (/OpenBSD/.test(appVersion)) {
     os = BROWSER_OPENBSD;
   } else if (/HP-UX/.test(appVersion)) {
@@ -78,8 +79,9 @@ function detectOSfromOscpu() {
   } else if ((match = oscpu.match(/Mac OS X ((\d+)(\.(\d+))?)/))) {
     os = BROWSER_MACOS;
     osVersion = parseFloat(match[1].replace(/_/g, '.'));
-  } else if (/Linux/.test(oscpu)) {
+  } else if ((match = oscpu.match(/Linux (i686|x86_64)/))) {
     os = BROWSER_LINUX;
+    osVersion = match[1];
   } else if (/OpenBSD/.test(oscpu)) {
     os = BROWSER_OPENBSD;
   } else if (/HP-UX/.test(oscpu)) {
