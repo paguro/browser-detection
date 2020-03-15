@@ -1,4 +1,4 @@
-# Paguro's Browser Detection
+# Paguro's Browser Detection [![CircleCI](https://circleci.com/gh/paguro/browser-detection/tree/master.svg?style=svg)](https://circleci.com/gh/paguro/browser-detection/tree/master)
 
 [![npm version](https://badge.fury.io/js/%40paguro%2Fbrowser-detection.svg)](https://badge.fury.io/js/%40paguro%2Fbrowser-detection)
 
