@@ -10,20 +10,17 @@ import { detectChrome } from './desktop/chrome';
 import { detectChromeMobile } from './mobile/chrome-mobile';
 
 export default function BrowserDetection() {
-  if ($.isMobile()) {
-    return detectChromeMobile() || detectFirefox() || detectSafari();
-  } else {
-    return (
-      detectOpera() ||
-      detectBrave() ||
-      detectEdge() ||
-      detectInternetExplorer() ||
-      detectFirefox() ||
-      detectSafari() ||
-      detectChrome() ||
-      detectChromium()
-    );
-  }
+  return (
+    ($.isMobile() && detectChromeMobile()) ||
+    detectOpera() ||
+    detectBrave() ||
+    detectEdge() ||
+    detectInternetExplorer() ||
+    detectFirefox() ||
+    detectSafari() ||
+    detectChrome() ||
+    detectChromium()
+  );
 }
 
 BrowserDetection.helpers = $;
