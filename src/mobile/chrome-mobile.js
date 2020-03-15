@@ -1,6 +1,6 @@
 import $ from '../helpers';
 import { detectOS } from '../os';
-import { getChromiumVersion } from '../desktop/chromium';
+import { detectChromiumVersion } from '../desktop/chromium';
 import { LAYOUT_WEBKIT, LAYOUT_BLINK, detectLayout } from '../layout';
 
 export function detectChromeMobile() {
@@ -18,17 +18,20 @@ export function detectChromeMobile() {
     $.hasFeature('$jscomp') ||
     $.hasFeature('__gCrWeb') ||
     $.hasFeature('webkit');
+
   if (layout === LAYOUT_WEBKIT && !hasWebKitFeatures) {
     return;
   }
 
   // Chrome Android is Blink
   var hasBlinkFeatures = $.hasFeature('chrome');
+
   if (layout === LAYOUT_BLINK && !hasBlinkFeatures) {
     return;
   }
 
-  var chromiumVersion = getChromiumVersion();
+  var chromiumVersion = detectChromiumVersion();
+
   if (!chromiumVersion) {
     return;
   }

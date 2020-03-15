@@ -2,98 +2,170 @@ import $ from '../helpers';
 import { detectOS } from '../os';
 import { LAYOUT_BLINK, detectLayout } from '../layout';
 
-export function getChromiumVersion() {
-  var browserVersion;
-
+export function detectChromiumVersion() {
   if ($.hasFeature('CompressionStream')) {
-    browserVersion = 80;
-  } else if ($.hasFeature('GeolocationCoordinates')) {
-    browserVersion = 79;
-  } else if ($.hasFeature('RTCDataChannel.prototype.maxPacketLifeTime')) {
-    browserVersion = 78;
-  } else if ($.hasFeature('FormDataEvent')) {
-    browserVersion = 77;
-  } else if ($.hasFeature('HTMLDocument.prototype.onsecuritypolicyviolation')) {
-    browserVersion = 76;
-  } else if ($.hasFeature('HTMLVideoElement.prototype.playsInline')) {
-    browserVersion = 75;
-  } else if ($.hasFeature('TextEncoder.prototype.encodeInto')) {
-    browserVersion = 74;
-  } else if ($.hasFeature('RTCRtpReceiver.prototype.getParameters')) {
-    browserVersion = 73;
-  } else if ($.hasFeature('Intl.ListFormat')) {
-    browserVersion = 72;
-  } else if ($.hasFeature('ShadowRoot.prototype.fullscreenElement')) {
-    browserVersion = 71;
-  } else if ($.hasFeature('MediaStreamTrack.prototype.contentHint')) {
-    browserVersion = 70;
-  } else if (
-    $.hasFeature('webkitRTCPeerConnection.prototype.getTransceivers')
-  ) {
-    browserVersion = 69;
-  } else if ($.hasFeature('CustomElementRegistry.prototype.upgrade')) {
-    browserVersion = 68;
-  } else if ($.hasFeature('DataView.prototype.setBigUint64')) {
-    browserVersion = 67;
-  } else if ($.hasFeature('AbortController')) {
-    browserVersion = 66;
-  } else if ($.hasFeature('PerformanceObserver.prototype.takeRecords')) {
-    browserVersion = 65;
-  } else if ($.hasFeature('Document.prototype.alinkColor')) {
-    browserVersion = 64;
-  } else if ($.hasFeature('HTMLFrameSetElement.prototype.onbeforeprint')) {
-    browserVersion = 63;
-  } else if ($.hasFeature('HTMLDataElement')) {
-    browserVersion = 62;
-  } else if ($.hasFeature('SVGAnimationElement.prototype.getAttributeNames')) {
-    browserVersion = 61;
-  } else if ($.hasFeature('BroadcastChannel.prototype.onmessageerror')) {
-    browserVersion = 60;
-  } else if ($.hasFeature('ImageCapture.prototype.getPhotoCapabilities')) {
-    browserVersion = 59;
-  } else if ($.hasFeature('AudioContext.prototype.baseLatency')) {
-    browserVersion = 58;
-  } else if ($.hasFeature('AudioContext.prototype.getOutputTimestamp')) {
-    browserVersion = 57;
-  } else if ($.hasFeature('BaseAudioContext.prototype.createConstantSource')) {
-    browserVersion = 56;
-  } else if ($.hasFeature('document.body.onauxclick')) {
-    browserVersion = 55;
-  } else if ($.hasFeature('Attr.prototype.getRootNode')) {
-    browserVersion = 54;
-  } else if ($.hasFeature('Element.prototype.attachShadow')) {
-    browserVersion = 53;
-  } else if ($.hasFeature('AudioListener.prototype.forwardX')) {
-    browserVersion = 52;
-  } else if ($.hasFeature('CanvasCaptureMediaStreamTrack')) {
-    browserVersion = 51;
-  } else if ($.hasFeature('DOMTokenList.prototype.value')) {
-    browserVersion = 50;
-  } else if ($.hasFeature('URLSearchParams.prototype.toString')) {
-    browserVersion = 49;
-  } else if ($.hasFeature('webkitIDBIndex.prototype.getAll')) {
-    browserVersion = 48;
-  } else if ($.hasFeature('CSSNamespaceRule')) {
-    browserVersion = 47;
-  } else if ($.hasFeature('Performance.prototype.onresourcetimingbufferfull')) {
-    browserVersion = 46;
-  } else if (
-    $.hasFeature('ServiceWorkerContainer.prototype.getRegistrations')
-  ) {
-    browserVersion = 45;
-  } else if ($.hasFeature('URIError.stackTraceLimit')) {
-    browserVersion = 44;
-  } else if ($.hasFeature('AnimationEvent')) {
-    browserVersion = 43;
-  } else if ($.hasFeature('AudioContext.prototype.close')) {
-    browserVersion = 42;
-  } else if ($.hasFeature('AudioContext.prototype.resume')) {
-    browserVersion = 41;
-  } else if ($.hasFeature('HTMLButtonElement.prototype.reportValidity')) {
-    browserVersion = 40;
+    return 80;
   }
 
-  return browserVersion;
+  if ($.hasFeature('GeolocationCoordinates')) {
+    return 79;
+  }
+
+  if ($.hasFeature('RTCDataChannel.prototype.maxPacketLifeTime')) {
+    return 78;
+  }
+
+  if ($.hasFeature('FormDataEvent')) {
+    return 77;
+  }
+
+  if ($.hasFeature('HTMLDocument.prototype.onsecuritypolicyviolation')) {
+    return 76;
+  }
+
+  if ($.hasFeature('HTMLVideoElement.prototype.playsInline')) {
+    return 75;
+  }
+
+  if ($.hasFeature('TextEncoder.prototype.encodeInto')) {
+    return 74;
+  }
+
+  if ($.hasFeature('RTCRtpReceiver.prototype.getParameters')) {
+    return 73;
+  }
+
+  if ($.hasFeature('Intl.ListFormat')) {
+    return 72;
+  }
+
+  if ($.hasFeature('ShadowRoot.prototype.fullscreenElement')) {
+    return 71;
+  }
+
+  if ($.hasFeature('MediaStreamTrack.prototype.contentHint')) {
+    return 70;
+  }
+
+  if ($.hasFeature('webkitRTCPeerConnection.prototype.getTransceivers')) {
+    return 69;
+  }
+
+  if ($.hasFeature('CustomElementRegistry.prototype.upgrade')) {
+    return 68;
+  }
+
+  if ($.hasFeature('DataView.prototype.setBigUint64')) {
+    return 67;
+  }
+
+  if ($.hasFeature('AbortController')) {
+    return 66;
+  }
+
+  if ($.hasFeature('PerformanceObserver.prototype.takeRecords')) {
+    return 65;
+  }
+
+  if ($.hasFeature('Document.prototype.alinkColor')) {
+    return 64;
+  }
+
+  if ($.hasFeature('HTMLFrameSetElement.prototype.onbeforeprint')) {
+    return 63;
+  }
+
+  if ($.hasFeature('HTMLDataElement')) {
+    return 62;
+  }
+
+  if ($.hasFeature('SVGAnimationElement.prototype.getAttributeNames')) {
+    return 61;
+  }
+
+  if ($.hasFeature('BroadcastChannel.prototype.onmessageerror')) {
+    return 60;
+  }
+
+  if ($.hasFeature('ImageCapture.prototype.getPhotoCapabilities')) {
+    return 59;
+  }
+
+  if ($.hasFeature('AudioContext.prototype.baseLatency')) {
+    return 58;
+  }
+
+  if ($.hasFeature('AudioContext.prototype.getOutputTimestamp')) {
+    return 57;
+  }
+
+  if ($.hasFeature('BaseAudioContext.prototype.createConstantSource')) {
+    return 56;
+  }
+
+  if ($.hasFeature('document.body.onauxclick')) {
+    return 55;
+  }
+
+  if ($.hasFeature('Attr.prototype.getRootNode')) {
+    return 54;
+  }
+
+  if ($.hasFeature('Element.prototype.attachShadow')) {
+    return 53;
+  }
+
+  if ($.hasFeature('AudioListener.prototype.forwardX')) {
+    return 52;
+  }
+
+  if ($.hasFeature('CanvasCaptureMediaStreamTrack')) {
+    return 51;
+  }
+
+  if ($.hasFeature('DOMTokenList.prototype.value')) {
+    return 50;
+  }
+
+  if ($.hasFeature('URLSearchParams.prototype.toString')) {
+    return 49;
+  }
+
+  if ($.hasFeature('webkitIDBIndex.prototype.getAll')) {
+    return 48;
+  }
+
+  if ($.hasFeature('CSSNamespaceRule')) {
+    return 47;
+  }
+
+  if ($.hasFeature('Performance.prototype.onresourcetimingbufferfull')) {
+    return 46;
+  }
+
+  if ($.hasFeature('ServiceWorkerContainer.prototype.getRegistrations')) {
+    return 45;
+  }
+
+  if ($.hasFeature('URIError.stackTraceLimit')) {
+    return 44;
+  }
+
+  if ($.hasFeature('AnimationEvent')) {
+    return 43;
+  }
+
+  if ($.hasFeature('AudioContext.prototype.close')) {
+    return 42;
+  }
+
+  if ($.hasFeature('AudioContext.prototype.resume')) {
+    return 41;
+  }
+
+  if ($.hasFeature('HTMLButtonElement.prototype.reportValidity')) {
+    return 40;
+  }
 }
 
 export function detectChromium() {
@@ -111,7 +183,8 @@ export function detectChromium() {
     return;
   }
 
-  browserVersion = getChromiumVersion();
+  browserVersion = detectChromiumVersion();
+
   if (!browserVersion) {
     return;
   }
