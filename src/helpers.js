@@ -19,7 +19,11 @@ var helpers = {
         return;
       }
 
-      target = target[segment];
+      try {
+        target = target[segment];
+      } catch (e) {
+        target = null;
+      }
     }
 
     return target;
