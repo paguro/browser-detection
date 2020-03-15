@@ -1,18 +1,16 @@
 // prettier-ignore
 module.exports = [
-  //
-  // Mobile
-  //
-  // { id: 'Chrome_58_iOS_9_0',        expected: { browser: 'Chrome Mobile',   browserVersion: 58,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 9.0   } },
-  // { id: 'Chrome_62_iOS_9_3',        expected: { browser: 'Chrome Mobile',   browserVersion: 62,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 9.3   } },
-  // { id: 'Chrome_75_iOS_11_2',       expected: { browser: 'Chrome Mobile',   browserVersion: 75,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 11.2  } },
-  // { id: 'Chrome_75_iOS_11_3',       expected: { browser: 'Chrome Mobile',   browserVersion: 75,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 11.3  } },
-  // { id: 'Chrome_75_iOS_11_4',       expected: { browser: 'Chrome Mobile',   browserVersion: 75,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 11.4  } },
-  // { id: 'Chrome_78_iOS_12_1',       expected: { browser: 'Chrome Mobile',   browserVersion: 78,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 12.1  } },
-  // { id: 'Chrome_78_iOS_12_2',       expected: { browser: 'Chrome Mobile',   browserVersion: 78,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 12.2  } },
-  // { id: 'Chrome_78_iOS_12_3',       expected: { browser: 'Chrome Mobile',   browserVersion: 78,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 12.3  } },
-  // { id: 'Chrome_78_iOS_13_3',       expected: { browser: 'Chrome Mobile',   browserVersion: 78,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 13.3  } },
-  // { id: 'Chrome_80_iOS_13_3',       expected: { browser: 'Chrome Mobile',   browserVersion: 80,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 13.3  } },
+  // ===== Mobile =====
+//{ id: 'Chrome_58_iOS_9_0',        expected: { browser: 'Chrome Mobile',   browserVersion: 58,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 9.0   } },
+//{ id: 'Chrome_62_iOS_9_3',        expected: { browser: 'Chrome Mobile',   browserVersion: 62,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 9.3   } },
+//{ id: 'Chrome_75_iOS_11_2',       expected: { browser: 'Chrome Mobile',   browserVersion: 75,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 11.2  } },
+//{ id: 'Chrome_75_iOS_11_3',       expected: { browser: 'Chrome Mobile',   browserVersion: 75,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 11.3  } },
+//{ id: 'Chrome_75_iOS_11_4',       expected: { browser: 'Chrome Mobile',   browserVersion: 75,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 11.4  } },
+//{ id: 'Chrome_78_iOS_12_1',       expected: { browser: 'Chrome Mobile',   browserVersion: 78,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 12.1  } },
+//{ id: 'Chrome_78_iOS_12_2',       expected: { browser: 'Chrome Mobile',   browserVersion: 78,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 12.2  } },
+//{ id: 'Chrome_78_iOS_12_3',       expected: { browser: 'Chrome Mobile',   browserVersion: 78,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 12.3  } },
+//{ id: 'Chrome_78_iOS_13_3',       expected: { browser: 'Chrome Mobile',   browserVersion: 78,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 13.3  } },
+//{ id: 'Chrome_80_iOS_13_3',       expected: { browser: 'Chrome Mobile',   browserVersion: 80,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 13.3  } },
   { id: 'Chrome_53_Android_7_1',    expected: { browser: 'Chrome Mobile',   browserVersion: 53,   layout: 'Blink',  layoutVersion: undefined, os: 'Android', osVersion: 7.1   } },
   { id: 'Chrome_78_Android_4_4',    expected: { browser: 'Chrome Mobile',   browserVersion: 78,   layout: 'Blink',  layoutVersion: undefined, os: 'Android', osVersion: 4.4   } },
   { id: 'Chrome_78_Android_5',      expected: { browser: 'Chrome Mobile',   browserVersion: 78,   layout: 'Blink',  layoutVersion: undefined, os: 'Android', osVersion: 5     } },
@@ -49,9 +47,9 @@ module.exports = [
   { id: 'Chrome_70_Android_10',     expected: { browser: 'Chrome Mobile',   browserVersion: 70,   layout: 'Blink',  layoutVersion: undefined, os: 'Android', osVersion: 10.0  } },
   { id: 'Chrome_71_Android_10',     expected: { browser: 'Chrome Mobile',   browserVersion: 71,   layout: 'Blink',  layoutVersion: undefined, os: 'Android', osVersion: 10.0  } },
   { id: 'Chrome_72_Android_10',     expected: { browser: 'Chrome Mobile',   browserVersion: 72,   layout: 'Blink',  layoutVersion: undefined, os: 'Android', osVersion: 10.0  } },
-  // TODO Chrome_73_Android_10 is missing
+  // TODO: add Chrome_73_Android_10
   { id: 'Chrome_74_Android_10',     expected: { browser: 'Chrome Mobile',   browserVersion: 74,   layout: 'Blink',  layoutVersion: undefined, os: 'Android', osVersion: 10.0  } },
-  // TODO Chrome_75_Android_10 is missing
+  // TODO: add Chrome_75_Android_10
   { id: 'Chrome_76_Android_10',     expected: { browser: 'Chrome Mobile',   browserVersion: 76,   layout: 'Blink',  layoutVersion: undefined, os: 'Android', osVersion: 10.0  } },
   { id: 'Chrome_77_Android_10',     expected: { browser: 'Chrome Mobile',   browserVersion: 77,   layout: 'Blink',  layoutVersion: undefined, os: 'Android', osVersion: 10.0  } },
   { id: 'Chrome_78_Android_10',     expected: { browser: 'Chrome Mobile',   browserVersion: 78,   layout: 'Blink',  layoutVersion: undefined, os: 'Android', osVersion: 10.0  } },
@@ -99,10 +97,7 @@ module.exports = [
   { id: 'Safari_12_iOS_12_3',       expected: { browser: 'Safari',          browserVersion: 12,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 12.3  } },
   { id: 'Safari_13_iOS_13_2',       expected: { browser: 'Safari',          browserVersion: 13,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 13.2  } },
   { id: 'Safari_13_iOS_13_3',       expected: { browser: 'Safari',          browserVersion: 13,   layout: 'WebKit', layoutVersion: undefined, os: 'iOS',     osVersion: 13.3  } },
-
-  //
-  // Desktop
-  //
+  // ===== Desktop =====
   { id: 'Chromium_40_MacOS_Mojave',    expected: { browser: 'Chromium', browserVersion: 40,   layout: 'Blink',    layoutVersion: undefined, os: 'Mac OS',  osVersion: 10.14     } },
   { id: 'Chromium_41_MacOS_Mojave',    expected: { browser: 'Chromium', browserVersion: 41,   layout: 'Blink',    layoutVersion: undefined, os: 'Mac OS',  osVersion: 10.14     } },
   { id: 'Chromium_42_MacOS_Mojave',    expected: { browser: 'Chromium', browserVersion: 42,   layout: 'Blink',    layoutVersion: undefined, os: 'Mac OS',  osVersion: 10.14     } },
