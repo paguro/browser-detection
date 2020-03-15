@@ -26,4 +26,5 @@ export default function BrowserDetection() {
   );
 }
 
+// TEST
 BrowserDetection.helpers = $;
