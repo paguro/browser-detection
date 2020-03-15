@@ -32,6 +32,9 @@ export function detectOSfromAppVersion() {
   } else if ((match = appVersion.match(/Mac OS X ((\d+)(_(\d+))?)/))) {
     os = BROWSER_MACOS;
     osVersion = parseFloat(match[1].replace(/_/g, '.'));
+  } else if ((match = appVersion.match(/Android ((\d+)(\.(\d+))?)/))) {
+    os = BROWSER_ANDROID;
+    osVersion = parseFloat(match[1]);
   } else if ((match = appVersion.match(/Linux (i686|x86_64)/))) {
     os = BROWSER_LINUX;
     osVersion = match[1];
@@ -47,9 +50,6 @@ export function detectOSfromAppVersion() {
   } else if ((match = appVersion.match(/iPhone OS ((\d+)(_(\d+))?)/))) {
     os = BROWSER_IOS;
     osVersion = parseFloat(match[1].replace(/_/g, '.'));
-  } else if ((match = appVersion.match(/Android ((\d+)(\.(\d+))?)/))) {
-    os = BROWSER_ANDROID;
-    osVersion = parseFloat(match[1]);
   } else {
     return;
   }

@@ -7,18 +7,23 @@ import { detectFirefox } from './desktop/firefox';
 import { detectOpera } from './desktop/opera';
 import { detectSafari } from './desktop/safari';
 import { detectChrome } from './desktop/chrome';
+import { detectChromeMobile } from './mobile/chrome-mobile';
 
 export default function BrowserDetection() {
-  return (
-    detectOpera() ||
-    detectBrave() ||
-    detectEdge() ||
-    detectInternetExplorer() ||
-    detectFirefox() ||
-    detectSafari() ||
-    detectChrome() ||
-    detectChromium()
-  );
+  if ($.isMobile()) {
+    return detectChromeMobile() || detectFirefox() || detectSafari();
+  } else {
+    return (
+      detectOpera() ||
+      detectBrave() ||
+      detectEdge() ||
+      detectInternetExplorer() ||
+      detectFirefox() ||
+      detectSafari() ||
+      detectChrome() ||
+      detectChromium()
+    );
+  }
 }
 
 BrowserDetection.helpers = $;
