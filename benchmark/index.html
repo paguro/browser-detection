@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Paguro's Browser Detection - Benchmark</title>
+    <style>
+      .table-header-rotated {
+        border-collapse: collapse;
+      }
+
+      .table-header-rotated td {
+        width: 30px;
+      }
+
+      .table-header-rotated td {
+        text-align: center;
+        padding: 10px 5px;
+        border: 1px solid #ccc;
+      }
+
+      .table-header-rotated th.rotate {
+        height: 140px;
+        white-space: nowrap;
+      }
+
+      .table-header-rotated th.rotate > div {
+        -webkit-transform: translate(25px, 51px) rotate(315deg);
+        -ms-transform: translate(25px, 51px) rotate(315deg);
+        transform: translate(25px, 51px) rotate(315deg);
+        width: 30px;
+      }
+
+      .table-header-rotated th.rotate > div > span {
+        border-bottom: 1px solid #ccc;
+        padding: 5px 10px;
+      }
+
+      .table-header-rotated th.row-header {
+        text-align: right;
+        padding: 0 10px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      td.success,
+      td.fail {
+        font-size: 16px;
+      }
+
+      td.success {
+        color: green;
+      }
+
+      td.fail {
+        color: red;
+      }
+
+      .tooltip {
+        cursor: pointer;
+        position: relative;
+      }
+
+      .tooltip > span {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        color: black;
+        font-size: 13px;
+        font-family: 'Lucida Console', Monaco, monospace;
+        white-space: nowrap;
+        padding: 2px 4px;
+        border: 1px solid black;
+        background: #fff;
+        -webkit-transform: translate(-50px, 25px);
+        -ms-transform: translate(-50px, 25px);
+        transform: translate(-50px, 25px);
+      }
+
+      .tooltip:hover > span {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <table class="table table-header-rotated">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="rotate">
+            <div><span>Paguro's</span></div>
+          </th>
+          <th class="rotate">
+            <div><span>Platform.js</span></div>
+          </th>
+          <th class="rotate">
+            <div><span>UAParser.js</span></div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="row-header">Chrome_53_Android_7_1</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_Android_4_4</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_Android_5</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_Android_5_1</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_Android_6</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_Android_7_1</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_Android_8</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_Android_8_1</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_Android_9</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_46_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_47_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_48_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_49_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_50_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_51_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_52_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_53_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_54_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_55_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_56_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_57_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_58_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_59_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_60_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_61_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_62_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_63_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_64_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_65_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_66_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_67_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_68_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_69_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_70_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_71_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_72_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_74_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_76_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_77_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_79_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_80_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_46_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_47_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_48_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_49_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_50_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_51_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_52_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_53_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_54_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_55_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_56_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_57_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_58_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_59_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_60_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_61_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_62_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_63_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_64_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_65_Android_4_4</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_65_Android_5</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_65_Android_6</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_65_Android_7_1</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_65_Android_8</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_65_Android_8_1</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_65_Android_9</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_65_Android_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_66_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_67_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_68_Android_4_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_8_iOS_8_1</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_9_iOS_9</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_9_iOS_9_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_10_iOS_10_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_11_iOS_11_2</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_11_iOS_11_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_11_iOS_11_4</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_12_iOS_12_1</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_12_iOS_12_2</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_12_iOS_12_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_13_iOS_13_2</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_13_iOS_13_3</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_40_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":40,"layout":"Blink","layoutVersion":40,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":40,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_41_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":41,"layout":"Blink","layoutVersion":41,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":41,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_42_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":42,"layout":"Blink","layoutVersion":42,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":42,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_43_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":43,"layout":"Blink","layoutVersion":43,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":43,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_44_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":44,"layout":"Blink","layoutVersion":44,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":44,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_45_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":45,"layout":"Blink","layoutVersion":45,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":45,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_46_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":46,"layout":"Blink","layoutVersion":46,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":46,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_47_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":47,"layout":"Blink","layoutVersion":47,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":47,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_48_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":48,"layout":"Blink","layoutVersion":48,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":48,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_49_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":49,"layout":"Blink","layoutVersion":49,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":49,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_50_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":50,"layout":"Blink","layoutVersion":50,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":50,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_51_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":51,"layout":"Blink","layoutVersion":51,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":51,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_52_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":52,"layout":"Blink","layoutVersion":52,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":52,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_53_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":53,"layout":"Blink","layoutVersion":53,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":53,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_54_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":54,"layout":"Blink","layoutVersion":54,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":54,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_55_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":55,"layout":"Blink","layoutVersion":55,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":55,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_56_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":56,"layout":"Blink","layoutVersion":56,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":56,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_57_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":57,"layout":"Blink","layoutVersion":57,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":57,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_58_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":58,"layout":"Blink","layoutVersion":58,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":58,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_60_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":60,"layout":"Blink","layoutVersion":60,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":60,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_61_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":61,"layout":"Blink","layoutVersion":61,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":61,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_62_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":62,"layout":"Blink","layoutVersion":62,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":62,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_63_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":63,"layout":"Blink","layoutVersion":63,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":63,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_64_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":64,"layout":"Blink","layoutVersion":64,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":64,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_65_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":65,"layout":"Blink","layoutVersion":65,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":65,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_66_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":66,"layout":"Blink","layoutVersion":66,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":66,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_67_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":67,"layout":"Blink","layoutVersion":67,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":67,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_68_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":68,"layout":"Blink","layoutVersion":68,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":68,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_69_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":69,"layout":"Blink","layoutVersion":69,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":69,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_70_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":70,"layout":"Blink","layoutVersion":70,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":70,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_71_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":71,"layout":"Blink","layoutVersion":71,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":71,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_72_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":72,"layout":"Blink","layoutVersion":72,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":72,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_73_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":73,"layout":"Blink","layoutVersion":73,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":73,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_74_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":74,"layout":"Blink","layoutVersion":74,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":74,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_75_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":75,"layout":"Blink","layoutVersion":75,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":75,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_76_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":76,"layout":"Blink","layoutVersion":76,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":76,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_77_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":77,"layout":"Blink","layoutVersion":77,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":77,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_78_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":78,"layout":"Blink","layoutVersion":78,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":78,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_79_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":79,"layout":"Blink","layoutVersion":79,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":79,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chromium_80_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":80,"layout":"Blink","layoutVersion":80,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":80,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_41_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_42_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_43_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_45_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_46_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_47_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_48_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_49_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_50_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_51_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_52_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_53_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_54_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_55_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_58_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_59_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_60_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_61_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_62_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_63_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_64_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_65_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_66_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_67_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_68_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_69_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_70_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_71_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_72_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_74_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_75_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_76_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_77_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_79_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_Linux_x86_64</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":78,"layout":"Blink","os":"Linux","osVersion":null}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_79_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_80_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_79_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_80_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Chrome_78_Linux_x86_64</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":78,"layout":"Blink","os":"Linux","osVersion":null}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Brave_0_60_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":72,"layout":"Blink","layoutVersion":72,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":72,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Brave_0_61_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":73,"layout":"Blink","layoutVersion":73,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":73,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Brave_0_63_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":74,"layout":"Blink","layoutVersion":74,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":74,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Brave_0_65_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":75,"layout":"Blink","layoutVersion":75,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":75,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Brave_0_67_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":76,"layout":"Blink","layoutVersion":76,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":76,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Brave_0_68_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":76,"layout":"Blink","layoutVersion":76,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":76,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Brave_0_69_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":77,"layout":"Blink","layoutVersion":77,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":77,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Brave_1_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":78,"layout":"Blink","layoutVersion":78,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":78,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Brave_1_1_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":79,"layout":"Blink","layoutVersion":79,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":79,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Brave_1_3_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":80,"layout":"Blink","layoutVersion":80,"os":"Mac OS","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":80,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Edge_40_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Edge","browserVersion":15,"layout":"EdgeHTML","layoutVersion":15,"os":"Windows","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Edge","browserVersion":15,"layout":"EdgeHTML","os":"Windows","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Edge_41_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Edge","browserVersion":16,"layout":"EdgeHTML","layoutVersion":16,"os":"Windows","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Edge","browserVersion":16,"layout":"EdgeHTML","os":"Windows","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Edge_42_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Edge","browserVersion":17,"layout":"EdgeHTML","layoutVersion":17,"os":"Windows","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Edge","browserVersion":17,"layout":"EdgeHTML","os":"Windows","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Edge_44_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Edge","browserVersion":18,"layout":"EdgeHTML","layoutVersion":18,"os":"Windows","osVersion":10}</span></td>
+          <td class="tooltip fail">☓<span>{"browser":"Edge","browserVersion":18,"layout":"EdgeHTML","os":"Windows","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Edge_79_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":79,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Edge_80_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":80,"layout":"Blink","os":"Mac OS","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Edge_80_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Chrome","browserVersion":80,"layout":"Blink","os":"Windows","osVersion":10}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_42_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_43_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_44_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_45_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_46_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_47_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_48_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_49_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_50_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_51_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_52_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_53_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_54_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_55_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_56_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_57_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_58_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_59_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_60_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_61_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_62_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_63_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_64_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_65_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_66_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_67_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_68_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_69_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_70_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_71_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_72_Linux_x86_64</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Firefox","browserVersion":72,"layout":"Gecko","os":"Linux","osVersion":null}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_72_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_72_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_73_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_73_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_73_Linux_x86_64</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="tooltip fail">☓<span>{"browser":"Firefox","browserVersion":73,"layout":"Gecko","os":"Linux","osVersion":null}</span></td>
+        </tr>
+        <tr>
+          <th class="row-header">Firefox_74_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">IE_11_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_37_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_38_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_39_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_40_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_41_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_42_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_43_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_44_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_45_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_46_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_47_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_48_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_49_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_50_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_51_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_52_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_53_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_54_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_55_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_56_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_57_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_58_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_60_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_60_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_62_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_62_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_63_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_63_Windows_10</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_64_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_65_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Opera_66_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_8_MacOS_Yosemite</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_9_MacOS_El_Capitan</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_10_MacOS_Sierra</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_11_MacOS_High_Sierra</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_12_MacOS_Mojave</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+        <tr>
+          <th class="row-header">Safari_13_MacOS_Catalina</th>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+          <td class="success">✓</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
