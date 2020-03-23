@@ -8,9 +8,13 @@ import { detectOpera } from './desktop/opera';
 import { detectSafari } from './desktop/safari';
 import { detectChrome } from './desktop/chrome';
 import { detectChromeMobile } from './mobile/chrome-mobile';
+import { detectEdgeMobile } from './mobile/edge-mobile';
+import { detectFirefoxMobile } from './mobile/firefox-mobile';
 
 export default function BrowserDetection() {
   return (
+    ($.isMobile() && detectEdgeMobile()) ||
+    ($.isMobile() && detectFirefoxMobile()) ||
     ($.isMobile() && detectChromeMobile()) ||
     detectOpera() ||
     detectBrave() ||
